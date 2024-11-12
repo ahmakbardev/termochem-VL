@@ -38,10 +38,10 @@
     <div id="guideModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[51] hidden">
         <div class="bg-white px-6 py-5 rounded-lg shadow-lg w-full max-w-xl transform scale-0 transition-transform duration-500"
             id="modalContent">
-            <button onclick="closeModal()" class="absolute top-4 right-4 w-fit text-gray-600 hover:text-gray-800">Close</button>
+            <button onclick="closeModal()" class="absolute top-4 right-4 w-fit text-gray-600 z-[1] hover:text-gray-800">Close</button>
 
             <!-- Carousel Content -->
-            <div id="carouselSlides" class="relative overflow-hidden">
+            <div id="carouselSlides" class="relative z-0 overflow-hidden">
                 <div id="carouselInner" class="flex transition-transform duration-500">
                     <!-- Slide 1 -->
                     <div class="w-full flex-shrink-0 text-center">

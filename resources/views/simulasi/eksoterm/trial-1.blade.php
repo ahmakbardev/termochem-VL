@@ -139,74 +139,97 @@
         const minDistance = 50; // Minimal jarak antar ion untuk mencegah tumpang tindih
         const ionPositions = []; // Array untuk menyimpan posisi ion yang sudah digunakan
 
+        let ions = []; // Array untuk menyimpan semua ion yang telah dibuat
+
         function addIon(symbol, className) {
             const ionContainer = document.getElementById('ionContainer');
             const ion = document.createElement('div');
             ion.className = `ion ${className}`;
             ion.innerText = symbol;
 
-            // Function to generate a random position within the container
-            function generateRandomPosition() {
-                const left = Math.random() * (ionContainer.offsetWidth - 40);
-                const top = Math.random() * (ionContainer.offsetHeight - 40);
-                return {
-                    left,
-                    top
-                };
-            }
+            // Menentukan posisi ion berdasarkan index dengan transformasi dari titik tengah
+            const positions = [{
+                    x: -120,
+                    y: -50
+                }, // Kiri atas
+                {
+                    x: 120,
+                    y: -50
+                }, // Kanan atas
+                {
+                    x: -50,
+                    y: 50
+                }, // Kiri bawah
+                {
+                    x: 50,
+                    y: 50
+                } // Kanan bawah
+            ];
 
-            // Function to check if the position is far enough from existing ions
-            function isPositionValid(position) {
-                return ionPositions.every(existingPosition => {
-                    const dx = position.left - existingPosition.left;
-                    const dy = position.top - existingPosition.top;
-                    return Math.sqrt(dx * dx + dy * dy) >= minDistance;
-                });
-            }
+            const position = positions[ionIndex % positions.length];
+            ion.style.position = 'absolute';
+            ion.style.transform = `translate(${position.x}%, ${position.y}%)`;
 
-            // Generate a valid position that doesn't overlap with others
-            let position;
-            let attempts = 0;
-            do {
-                position = generateRandomPosition();
-                attempts++;
-            } while (!isPositionValid(position) && attempts < 100); // Cegah loop tak terbatas
-
-            // Jika posisi valid ditemukan, tambahkan ke daftar posisi dan terapkan pada elemen ion
-            ionPositions.push(position);
-            ion.style.left = `${position.left}px`;
-            ion.style.top = `${position.top}px`;
-
-            // Append ion to the container
+            // Tambahkan elemen ion ke dalam ionContainer
             ionContainer.appendChild(ion);
+            ionIndex++;
 
-            // Assign a unique random speed for each ion's movement
-            const speedFactor = Math.random() * 0.1 + 0.3;
+            // Menyimpan data posisi dan kecepatan ion
+            const speedFactor = 0.55; // Mengatur faktor kecepatan lebih kecil untuk gerakan lebih lambat
+            let dx = (Math.random() < 0.5 ? 1 : -1) * speedFactor;
+            let dy = (Math.random() < 0.5 ? 1 : -1) * speedFactor;
+            const ionData = {
+                element: ion,
+                dx,
+                dy
+            };
 
-            // Generate random initial direction with unique speeds
-            let dx = (Math.random() < 0.5 ? 1 : -1) * (Math.random() * 2 + 1) * speedFactor;
-            let dy = (Math.random() < 0.5 ? 1 : -1) * (Math.random() * 2 + 1) * speedFactor;
+
+            ions.push(ionData); // Tambahkan ion ke array ions
 
             function moveIon() {
                 const containerRect = ionContainer.getBoundingClientRect();
                 const ionRect = ion.getBoundingClientRect();
 
-                // Boundary collision detection
-                if (ionRect.left <= containerRect.left) dx = Math.abs(dx);
-                if (ionRect.right >= containerRect.right) dx = -Math.abs(dx);
-                if (ionRect.top <= containerRect.top) dy = Math.abs(dy);
-                if (ionRect.bottom >= containerRect.bottom) dy = -Math.abs(dy);
+                // Deteksi tabrakan dengan dinding container
+                if (ionRect.left <= containerRect.left) ionData.dx = Math.abs(ionData.dx);
+                if (ionRect.right >= containerRect.right) ionData.dx = -Math.abs(ionData.dx);
+                if (ionRect.top <= containerRect.top) ionData.dy = Math.abs(ionData.dy);
+                if (ionRect.bottom >= containerRect.bottom) ionData.dy = -Math.abs(ionData.dy);
 
-                // Update ion position
-                ion.style.left = `${ion.offsetLeft + dx}px`;
-                ion.style.top = `${ion.offsetTop + dy}px`;
+                // Update posisi ion
+                ion.style.left = `${ion.offsetLeft + ionData.dx}px`;
+                ion.style.top = `${ion.offsetTop + ionData.dy}px`;
 
-                // Continue moving the ion in the next frame
+                // Cek tabrakan dengan ion lain
+                for (let i = 0; i < ions.length; i++) {
+                    if (ions[i].element !== ion) {
+                        const otherRect = ions[i].element.getBoundingClientRect();
+                        if (checkCollision(ionRect, otherRect)) {
+                            // Balikkan arah kedua ion saat bertabrakan
+                            ionData.dx *= -1;
+                            ionData.dy *= -1;
+                            ions[i].dx *= -1;
+                            ions[i].dy *= -1;
+                        }
+                    }
+                }
+
                 requestAnimationFrame(moveIon);
             }
 
-            // Start the ion movement
+            // Mulai gerakan ion
             requestAnimationFrame(moveIon);
+        }
+
+        // Fungsi untuk mengecek tabrakan antara dua kotak
+        function checkCollision(rect1, rect2) {
+            return !(
+                rect1.right < rect2.left ||
+                rect1.left > rect2.right ||
+                rect1.bottom < rect2.top ||
+                rect1.top > rect2.bottom
+            );
         }
 
 

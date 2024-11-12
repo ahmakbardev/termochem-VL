@@ -15,10 +15,10 @@
                         class="w-full block bg-white relative text-gray-800 py-2 rounded-full shadow-md hover:bg-gray-200 transition duration-200">
                         Percobaan 1
                     </a>
-                    <button
+                    {{-- <button
                         class="w-full bg-white text-gray-800 py-2 rounded-full shadow-md hover:bg-gray-200 transition duration-200">
                         Percobaan 2
-                    </button>
+                    </button> --}}
                 </div>
             </div>
 
@@ -30,10 +30,10 @@
                         class="w-full bg-white text-gray-800 py-2 rounded-full shadow-md hover:bg-gray-200 transition duration-200">
                         Percobaan 1
                     </button>
-                    <button
+                    {{-- <button
                         class="w-full bg-white text-gray-800 py-2 rounded-full shadow-md hover:bg-gray-200 transition duration-200">
                         Percobaan 2
-                    </button>
+                    </button> --}}
                 </div>
             </div>
 

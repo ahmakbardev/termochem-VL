@@ -22,32 +22,26 @@
 
         <div class="navbar-collapse offcanvas-collapse lg:flex lg:flex-grow lg:items-center" id="navbarsExampleDefault">
             <ul class="pl-0 mt-3 mb-2 ml-auto flex flex-col list-none lg:mt-0 lg:mb-0 lg:flex-row">
-                <li>
-                    <a class="nav-link page-scroll active" href="#header">Home <span
-                            class="sr-only">(current)</span></a>
-                </li>
-                <li>
-                    <a class="nav-link page-scroll" href="#features">Features</a>
-                </li>
-                <li>
-                    <a class="nav-link page-scroll" href="#details">Details</a>
-                </li>
-                <li>
-                    <a class="nav-link page-scroll" href="#pricing">Pricing</a>
-                </li>
-                <li class="dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">Drop</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item page-scroll" href="article.html">Article Details</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item page-scroll" href="terms.html">Terms Conditions</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item page-scroll" href="privacy.html">Privacy Policy</a>
+                <!-- Existing Nav Items Here -->
+
+                <!-- Profile and Logout Button -->
+                <li class="relative">
+                    <button id="profileButton"
+                        class="w-10 h-10 z-10 rounded-full bg-gray-200 flex items-center justify-center focus:outline-none"
+                        onclick="toggleDropdown()">
+                        <img src="{{ asset('assets/images/user.png') }}" alt="Profile" class="w-8 h-8 rounded-full">
+                    </button>
+
+                    <!-- Dropdown for Logout -->
+                    <div id="dropdownMenu" class="absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg hidden">
+                        <form action="{{ route('logout') }}" method="POST" class="w-full text-center">
+                            @csrf
+                            <button type="submit"
+                                class="w-full px-4 py-2 text-gray-700 hover:bg-gray-100 focus:outline-none">
+                                Logout
+                            </button>
+                        </form>
                     </div>
-                </li>
-                <li>
-                    <a class="nav-link page-scroll" href="#download">Download</a>
                 </li>
             </ul>
         </div> <!-- end of navbar-collapse -->
@@ -59,6 +53,22 @@
     function goBack() {
         window.history.back();
     }
+
+    // Toggle Dropdown
+    function toggleDropdown() {
+        const dropdown = document.getElementById("dropdownMenu");
+        dropdown.classList.toggle("hidden");
+    }
+
+    // Close dropdown if clicked outside
+    document.addEventListener("click", function(event) {
+        const dropdown = document.getElementById("dropdownMenu");
+        const profileButton = document.getElementById("profileButton");
+
+        if (!profileButton.contains(event.target) && !dropdown.contains(event.target)) {
+            dropdown.classList.add("hidden");
+        }
+    });
 
     // Check if the "Back" button should be hidden
     document.addEventListener("DOMContentLoaded", function() {

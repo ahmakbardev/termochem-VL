@@ -32,7 +32,11 @@
     {{-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" /> --}}
 
 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+    <!-- Append version number to CSS file name -->
+    <link rel="stylesheet" href="{{ asset('css/app.css?v=1.01') }}">
+    <!-- Add cache-control headers for CSS and JavaScript files -->
+    <link rel="preload" href="{{ asset('css/app.css?v=1.01') }}" as="style" crossorigin="anonymous" />
+
     <link href="{{ asset('css/swiper.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/swiper.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/magnific-popup.css') }}" rel="stylesheet" />
@@ -43,7 +47,9 @@
 </head>
 
 <body data-spy="scroll" data-target=".fixed-top">
-    @include('layouts.components.navbar')
+    @auth
+        @include('layouts.components.navbar')
+    @endauth
 
     <div class="h-screen">
         @yield('content')

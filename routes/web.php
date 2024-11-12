@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,16 +14,37 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('/kompetensi', function () {
-    return view('kompetensi');
-})->name('kompetensi');
-Route::get('/simulasi', function () {
-    return view('simulasi.index');
-})->name('simulasi');
+// Routes for guests (unauthenticated users)
+Route::middleware('guest')->group(function () {
+    Route::get('/welcome', function () {
+        return view('welcome');
+    });
 
-Route::get('/percobaan', function () {
-    return view('simulasi.eksoterm.trial-1');
-})->name('percobaan');
+    Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+    Route::post('/login', [AuthController::class, 'login']);
+
+    Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
+    Route::post('/register', [AuthController::class, 'register']);
+});
+
+// Routes for authenticated users
+Route::middleware('auth')->group(function () {
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+    Route::get('/', function () {
+        return view('index');
+    });
+    Route::get('/materi', function () {
+        return view('materi');
+    })->name('materi');
+    Route::get('/kompetensi', function () {
+        return view('kompetensi');
+    })->name('kompetensi');
+    Route::get('/simulasi', function () {
+        return view('simulasi.index');
+    })->name('simulasi');
+
+    Route::get('/percobaan', function () {
+        return view('simulasi.eksoterm.trial-1');
+    })->name('percobaan');
+});

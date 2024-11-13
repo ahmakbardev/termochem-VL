@@ -83,6 +83,10 @@
             <!-- Steps -->
             <div class="text-center text-gray-700 mt-4" id="instructions">
                 <p id="stepText">Langkah 1: Klik gelas CH3COOH untuk menuangkannya ke dalam gelas utama.</p>
+
+                <!-- Reset Button -->
+                <button class="mt-6 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                    onclick="resetSimulation()">Mulai Lagi</button>
             </div>
         </div>
     </div>
@@ -92,6 +96,37 @@
         let temperature = 29;
         let ch3coohAdded = false;
         let nahco3Added = false;
+
+        function resetSimulation() {
+            // Reset variables
+            currentStep = 1;
+            temperature = 29;
+            ch3coohAdded = false;
+            nahco3Added = false;
+
+            // Reset thermometer display
+            document.getElementById('temperatureDisplay').innerText = temperature;
+            document.getElementById('mercury').style.height = '40%';
+
+            // Reset liquid colors and heights
+            document.getElementById('reactionLiquid').classList.remove('bg-blue-500', 'bg-purple-500');
+            document.getElementById('reactionLiquid').style.height = '0%';
+
+            // Reset chemical container opacity and pointer events
+            document.getElementById('ch3coohContainer').classList.remove('opacity-50', 'pointer-events-none');
+            document.getElementById('nahco3Container').classList.remove('opacity-50', 'pointer-events-none');
+
+            // Reset ions in the container
+            document.getElementById('ionContainer').innerHTML = '';
+            ions = []; // Clear the ions array
+
+            // Reset molecule text
+            document.getElementById('moleculeText').innerText = "Tidak ada larutan di dalam gelas kimia.";
+
+            // Reset instruction text
+            document.getElementById('stepText').innerText =
+                'Langkah 1: Klik gelas CH3COOH untuk menuangkannya ke dalam gelas utama.';
+        }
 
         function addCH3COOH() {
             if (currentStep === 1) {

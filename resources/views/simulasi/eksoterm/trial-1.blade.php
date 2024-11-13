@@ -4,6 +4,8 @@
     <div class="container mx-auto px-4 py-8 h-full flex justify-center items-center flex-col">
         <h2 class="text-center text-3xl font-bold mb-8">Simulasi Percobaan Reaksi Eksoterm (Percobaan 1)</h2>
 
+
+
         <!-- Simulation Area -->
         <div id="simulationArea"
             class="bg-blue-50 p-6 rounded-lg w-4/5 shadow-md flex flex-col items-center space-y-8 relative">
@@ -83,6 +85,10 @@
             <!-- Steps -->
             <div class="text-center text-gray-700 mt-4" id="instructions">
                 <p id="stepText">Langkah 1: Klik gelas HCl untuk menuangkannya ke dalam gelas utama.</p>
+
+                <!-- Reset Button -->
+                <button class="mt-6 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                    onclick="resetSimulation()">Mulai Lagi</button>
             </div>
         </div>
     </div>
@@ -276,6 +282,37 @@
         document.getElementById('mainBeaker').addEventListener('mouseleave', function() {
             document.getElementById('moleculeInfo').classList.add('hidden');
         });
+
+        function resetSimulation() {
+            // Reset variables
+            currentStep = 1;
+            temperature = 25;
+            hclAdded = false;
+            naohAdded = false;
+
+            // Reset thermometer display
+            document.getElementById('temperatureDisplay').innerText = temperature;
+            document.getElementById('mercury').style.height = '25%';
+
+            // Reset liquid colors and heights
+            document.getElementById('reactionLiquid').classList.remove('bg-blue-500', 'bg-purple-500');
+            document.getElementById('reactionLiquid').style.height = '0%';
+
+            // Reset chemical container opacity and pointer events
+            document.getElementById('hclContainer').classList.remove('opacity-50', 'pointer-events-none');
+            document.getElementById('naohContainer').classList.remove('opacity-50', 'pointer-events-none');
+
+            // Reset ions in the container
+            document.getElementById('ionContainer').innerHTML = '';
+            ions = []; // Clear the ions array
+
+            // Reset molecule text
+            document.getElementById('moleculeText').innerText = "Tidak ada larutan di dalam gelas kimia.";
+
+            // Reset instruction text
+            document.getElementById('stepText').innerText =
+                'Langkah 1: Klik gelas HCl untuk menuangkannya ke dalam gelas utama.';
+        }
     </script>
 
     <style>

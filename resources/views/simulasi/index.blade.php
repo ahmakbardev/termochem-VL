@@ -25,9 +25,9 @@
             <!-- Endoterm Section -->
             <div class="bg-yellow-400 p-6 rounded-lg shadow-lg text-center w-full sm:w-64">
                 <h3 class="text-lg font-semibold mb-4 text-gray-800">Reaksi Endoterm</h3>
-                <div class="space-y-4">
+                <div class="space-y-4 relative w-full">
                     <a href="{{ route('percobaan-endoterm') }}"
-                        class="w-full bg-white text-gray-800 py-2 rounded-full shadow-md hover:bg-gray-200 transition duration-200">
+                        class="w-full block bg-white relative text-gray-800 py-2 rounded-full shadow-md hover:bg-gray-200 transition duration-200">
                         Percobaan 1
                     </a>
                     {{-- <button

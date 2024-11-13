@@ -44,12 +44,14 @@
                             kimia, termasuk jumlah energi yang diserap atau dilepaskan selama proses tersebut.</p>
                         <div class="flex space-x-4 mt-4">
                             <figure class="w-1/2">
-                                <img src="{{ asset('assets/images/materi/teh_panas.jpg') }}" alt="Teh Panas" class="w-full rounded-md shadow-md">
+                                <img src="{{ asset('assets/images/materi/teh_panas.jpg') }}" alt="Teh Panas"
+                                    class="w-full rounded-md shadow-md">
                                 <figcaption class="text-sm text-center text-gray-500">Gambar 1: Teh Panas<br>(sumber:
                                     kompasiana.com)</figcaption>
                             </figure>
                             <figure class="w-1/2">
-                                <img src="{{ asset('assets/images/materi/pembakaran_kayu.jpg') }}" alt="Pembakaran Kayu" class="w-full rounded-md shadow-md">
+                                <img src="{{ asset('assets/images/materi/pembakaran_kayu.jpg') }}" alt="Pembakaran Kayu"
+                                    class="w-full rounded-md shadow-md">
                                 <figcaption class="text-sm text-center text-gray-500">Gambar 2: Pembakaran Kayu<br>(sumber:
                                     kumparan.com)</figcaption>
                             </figure>
@@ -78,7 +80,8 @@
                         </ul>
                         <div class="flex justify-center mt-4">
                             <figure class="w-2/3">
-                                <img src="{{ asset('assets/images/materi/sistem_terbuka.png') }}" alt="Jenis-Jenis Sistem" class="w-full rounded-md shadow-md">
+                                <img src="{{ asset('assets/images/materi/sistem_terbuka.png') }}" alt="Jenis-Jenis Sistem"
+                                    class="w-full rounded-md shadow-md">
                                 <figcaption class="text-sm text-center text-gray-500">Gambar 3: Sistem Terbuka, Tertutup,
                                     dan Terisolasi</figcaption>
                             </figure>
@@ -144,8 +147,8 @@
                         </ol>
                         <div class="flex justify-center mt-4">
                             <figure class="w-2/3">
-                                <img src="{{ asset('assets/images/materi/2reaksi.png') }}" alt="Reaksi Eksoterm dan Endoterm"
-                                    class="w-full rounded-md shadow-md">
+                                <img src="{{ asset('assets/images/materi/2reaksi.png') }}"
+                                    alt="Reaksi Eksoterm dan Endoterm" class="w-full rounded-md shadow-md">
                                 <figcaption class="text-sm text-center text-gray-500">Gambar 4: Kalor diserap dari
                                     lingkungan ke sistem (ΔH = +) dan Kalor dilepas dari sistem ke lingkungan (ΔH = -)
                                 </figcaption>
@@ -180,8 +183,8 @@
                         </ol>
                         <div class="flex justify-center mt-4">
                             <figure class="w-full flex flex-col items-center justify-center">
-                                <img src="{{ asset('assets/images/materi/endo&ekso.png') }}" alt="Diagram Enthalpi Eksoterm dan Endoterm"
-                                    class="w-2/3 rounded-md shadow-md">
+                                <img src="{{ asset('assets/images/materi/endo&ekso.png') }}"
+                                    alt="Diagram Enthalpi Eksoterm dan Endoterm" class="w-2/3 rounded-md shadow-md">
                                 <figcaption class="text-sm text-center text-gray-500">Gambar 5: Reaksi eksoterm (kiri) dan
                                     Reaksi endoterm (kanan)</figcaption>
                             </figure>
@@ -192,4 +195,26 @@
             </main>
         </div>
     </div>
+    <script>
+        // Function to handle smooth scrolling to the selected section
+        function scrollToSection(event) {
+            event.preventDefault();
+            const targetId = event.target.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            // Calculate the offset to bring the title in the center of the viewport
+            const yOffset = -window.innerHeight / 2 + targetElement.offsetHeight / 2;
+            const yPosition = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+            window.scrollTo({
+                top: yPosition,
+                behavior: 'smooth'
+            });
+        }
+
+        // Attach click event listener to each link in the sidebar
+        document.querySelectorAll('aside nav a').forEach(link => {
+            link.addEventListener('click', scrollToSection);
+        });
+    </script>
 @endsection

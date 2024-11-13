@@ -44,12 +44,12 @@
                             kimia, termasuk jumlah energi yang diserap atau dilepaskan selama proses tersebut.</p>
                         <div class="flex space-x-4 mt-4">
                             <figure class="w-1/2">
-                                <img src="path/to/image1.jpg" alt="Teh Panas" class="w-full rounded-md shadow-md">
+                                <img src="{{ asset('assets/images/materi/teh_panas.jpg') }}" alt="Teh Panas" class="w-full rounded-md shadow-md">
                                 <figcaption class="text-sm text-center text-gray-500">Gambar 1: Teh Panas<br>(sumber:
                                     kompasiana.com)</figcaption>
                             </figure>
                             <figure class="w-1/2">
-                                <img src="path/to/image2.jpg" alt="Pembakaran Kayu" class="w-full rounded-md shadow-md">
+                                <img src="{{ asset('assets/images/materi/pembakaran_kayu.jpg') }}" alt="Pembakaran Kayu" class="w-full rounded-md shadow-md">
                                 <figcaption class="text-sm text-center text-gray-500">Gambar 2: Pembakaran Kayu<br>(sumber:
                                     kumparan.com)</figcaption>
                             </figure>
@@ -78,7 +78,7 @@
                         </ul>
                         <div class="flex justify-center mt-4">
                             <figure class="w-2/3">
-                                <img src="path/to/image3.jpg" alt="Jenis-Jenis Sistem" class="w-full rounded-md shadow-md">
+                                <img src="{{ asset('assets/images/materi/sistem_terbuka.png') }}" alt="Jenis-Jenis Sistem" class="w-full rounded-md shadow-md">
                                 <figcaption class="text-sm text-center text-gray-500">Gambar 3: Sistem Terbuka, Tertutup,
                                     dan Terisolasi</figcaption>
                             </figure>
@@ -144,7 +144,7 @@
                         </ol>
                         <div class="flex justify-center mt-4">
                             <figure class="w-2/3">
-                                <img src="path/to/image4.jpg" alt="Reaksi Eksoterm dan Endoterm"
+                                <img src="{{ asset('assets/images/materi/2reaksi.png') }}" alt="Reaksi Eksoterm dan Endoterm"
                                     class="w-full rounded-md shadow-md">
                                 <figcaption class="text-sm text-center text-gray-500">Gambar 4: Kalor diserap dari
                                     lingkungan ke sistem (ΔH = +) dan Kalor dilepas dari sistem ke lingkungan (ΔH = -)
@@ -179,8 +179,8 @@
                             </li>
                         </ol>
                         <div class="flex justify-center mt-4">
-                            <figure class="w-full flex justify-center">
-                                <img src="path/to/image5.jpg" alt="Diagram Enthalpi Eksoterm dan Endoterm"
+                            <figure class="w-full flex flex-col items-center justify-center">
+                                <img src="{{ asset('assets/images/materi/endo&ekso.png') }}" alt="Diagram Enthalpi Eksoterm dan Endoterm"
                                     class="w-2/3 rounded-md shadow-md">
                                 <figcaption class="text-sm text-center text-gray-500">Gambar 5: Reaksi eksoterm (kiri) dan
                                     Reaksi endoterm (kanan)</figcaption>

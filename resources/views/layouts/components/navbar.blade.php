@@ -29,7 +29,7 @@
                     <button id="profileButton"
                         class="w-10 h-10 z-10 rounded-full bg-gray-200 flex items-center justify-center focus:outline-none"
                         onclick="toggleDropdown()">
-                        <img src="{{ asset('assets/images/user.png') }}" alt="Profile" class="w-8 h-8 rounded-full">
+                        <img src="{{ asset('assets/images/profile.png') }}" alt="Profile" class="w-8 h-8 rounded-full">
                     </button>
 
                     <!-- Dropdown for Logout -->

@@ -44,7 +44,10 @@ Route::middleware('auth')->group(function () {
         return view('simulasi.index');
     })->name('simulasi');
 
-    Route::get('/percobaan', function () {
+    Route::get('/percobaan-eksoterm', function () {
         return view('simulasi.eksoterm.trial-1');
-    })->name('percobaan');
+    })->name('percobaan-eksoterm');
+    Route::get('/percobaan-endoterm', function () {
+        return view('simulasi.endoterm.trial-1');
+    })->name('percobaan-endoterm');
 });

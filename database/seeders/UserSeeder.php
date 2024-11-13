@@ -19,5 +19,10 @@ class UserSeeder extends Seeder
             'name' => 'testuser@example.com', // This can be adjusted or removed if you're not using email
             'password' => Hash::make('password123'), // Change this to your test password
         ]);
+        User::create([
+            'username' => 'sman1batu', // Change to any test username you prefer
+            'name' => 'sman1batukelaskimia', // This can be adjusted or removed if you're not using email
+            'password' => Hash::make('kelaskimiaA'), // Change this to your test password
+        ]);
     }
 }

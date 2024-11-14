@@ -69,10 +69,10 @@
 
                 <!-- Molecule Tooltip -->
                 <div id="moleculeInfo"
-                    class="hidden absolute left-3/4 -translate-x-2/3 bg-white p-4 rounded-lg shadow-lg text-sm text-gray-700 border border-gray-300 w-48 h-44">
+                    class="hidden absolute left-3/4 -translate-x-2/3 bg-white p-4 rounded-lg shadow-lg text-sm text-gray-700 border border-gray-300 w-48 h-52">
                     <div class="relative h-[80%]">
                         <p id="moleculeText" class="text-center">Tidak ada larutan di dalam gelas kimia.</p>
-                        <div id="ionContainer" class="absolute inset-0"></div>
+                        <div id="ionContainer" class="absolute inset-0 *:text-xs"></div>
                         <div
                             class="absolute top-1/2 left-[-6px] transform -translate-y-1/2 w-3 h-3 bg-white border-r border-t border-gray-300 rotate-45">
                         </div>
@@ -440,12 +440,12 @@
 
         .ion {
             position: absolute;
-            width: 30px;
+            width: fit-content;
             height: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.875rem;
+            /* font-size: 0.875rem; */
             font-weight: bold;
             color: white;
             border-radius: 50%;
@@ -551,16 +551,26 @@
         }
 
         .ion {
-            width: 40px;
+            width: auto;
+            min-width: 40px;
+            /* Minimal 40px */
+            max-width: fit-content;
+            /* Menyesuaikan sesuai konten */
             height: 40px;
+            padding: 0 10px;
+            /* Memberikan ruang horizontal */
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.875rem;
+            /* font-size: 0.875rem; */
             font-weight: bold;
             color: white;
-            border-radius: 50%;
+            background-color: blue;
+            /* Atur warna sesuai kebutuhan */
+            border-radius: 20px;
+            /* Memberikan bentuk elips */
         }
+
 
         .ion.h-plus {
             background-color: #1c64f2;

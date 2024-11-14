@@ -116,4 +116,122 @@
             }, 300); // Duration should match the transition duration
         }
     </script>
+
+    <!-- Modal for Automatic Tutorial with Carousel -->
+    <div id="modalTutorial" class="fixed inset-0 hidden bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
+        <div
+            class="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 transform transition-all duration-300 opacity-0 scale-75">
+            <button
+                class="close-tutorial absolute top-2 right-2 text-gray-600 hover:text-gray-900 text-2xl font-bold">&times;</button>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">Panduan Penggunaan Halaman</h3>
+
+            <!-- Carousel Content -->
+            <div class="carousel">
+                <div class="carousel-slide text-center hidden">Langkah 1: Pada halaman ini, Anda dapat memilih kategori
+                    kompetensi yang ingin dipelajari dengan mengklik gambar pada masing-masing bagian.</div>
+                <div class="carousel-slide text-center hidden">Langkah 2: Setiap kategori kompetensi berisi informasi rinci
+                    yang relevan dengan topik tersebut, termasuk tujuan dan keterampilan yang dibutuhkan.</div>
+                <div class="carousel-slide text-center hidden">Langkah 3: Untuk menutup setiap modal informasi, klik tombol
+                    "Tutup" atau klik di luar area modal.</div>
+                <div class="carousel-slide text-center hidden">Langkah 4: Gunakan halaman ini sebagai panduan dalam memahami
+                    berbagai kompetensi yang tersedia dalam pembelajaran kimia ini.</div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <div class="flex justify-between items-center mt-4">
+                <button class="prev px-4 py-2 bg-gray-300 rounded-full hover:bg-gray-400">Prev</button>
+                <div class="carousel-indicators flex space-x-2"></div>
+                <button class="next px-4 py-2 bg-gray-300 rounded-full hover:bg-gray-400">Next</button>
+            </div>
+
+            <!-- Close Button -->
+            <div class="text-center mt-6">
+                <button
+                    class="close-tutorial bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-200">Mengerti</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .modal {
+            display: none;
+        }
+
+        .carousel-slide {
+            display: none;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        .carousel-indicators .indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: gray;
+        }
+
+        .carousel-indicators .indicator.active {
+            background: blue;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function() {
+            // Show the modal automatically when the page loads
+            setTimeout(function() {
+                $('#modalTutorial').removeClass('hidden');
+                $('#modalTutorial .transform').removeClass('opacity-0 scale-75');
+                showSlide(0); // Start from the first slide
+            }, 100); // Delay 1 second for a smoother experience
+
+            // Close the modal on button click
+            $('.close-tutorial').click(function() {
+                $('#modalTutorial .transform').addClass('opacity-0 scale-75');
+                setTimeout(() => {
+                    $('#modalTutorial').addClass('hidden');
+                }, 300); // Duration matches the transition
+            });
+
+            // Carousel variables
+            let currentSlide = 0;
+            const slides = $('#modalTutorial .carousel-slide');
+            const totalSlides = slides.length;
+
+            // Show the current slide and update indicators
+            function showSlide(index) {
+                slides.removeClass('active').eq(index).addClass('active');
+                $('#modalTutorial .carousel-indicators .indicator').removeClass('active').eq(index).addClass(
+                    'active');
+                currentSlide = index;
+            }
+
+            // Generate indicators
+            slides.each(function(index) {
+                $('#modalTutorial .carousel-indicators').append('<div class="indicator" data-index="' +
+                    index + '"></div>');
+            });
+
+            // Click indicator to go to specific slide
+            $('#modalTutorial .carousel-indicators').on('click', '.indicator', function() {
+                showSlide($(this).data('index'));
+            });
+
+            // Next button
+            $('#modalTutorial .next').click(function() {
+                const nextSlide = (currentSlide + 1) % totalSlides;
+                showSlide(nextSlide);
+            });
+
+            // Previous button
+            $('#modalTutorial .prev').click(function() {
+                const prevSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                showSlide(prevSlide);
+            });
+
+            // Show the first slide by default
+            showSlide(currentSlide);
+        });
+    </script>
 @endsection

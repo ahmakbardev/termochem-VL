@@ -50,4 +50,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/percobaan-endoterm', function () {
         return view('simulasi.endoterm.trial-1');
     })->name('percobaan-endoterm');
+    Route::get('/percobaan-kalorimeter', function () {
+        return view('simulasi.kalorimeter.trial-1');
+    })->name('percobaan-kalorimeter');
 });

@@ -35,7 +35,7 @@
     </header> <!-- end of header -->
 
     <!-- Modal for User Instructions -->
-    <div id="guideModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[51] hidden">
+    {{-- <div id="guideModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[51] hidden">
         <div class="bg-white px-6 py-5 rounded-lg shadow-lg w-full max-w-xl transform scale-0 transition-transform duration-500"
             id="modalContent">
             <button onclick="closeModal()" class="absolute top-4 right-4 w-fit text-gray-600 z-[1] hover:text-gray-800">Close</button>
@@ -72,9 +72,9 @@
                 <button onclick="nextSlide()" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">→</button>
             </div>
         </div>
-    </div>
+    </div> --}}
 
-    <script>
+    {{-- <script>
         let currentSlide = 0;
         const totalSlides = document.querySelectorAll("#carouselInner > div").length;
 
@@ -116,5 +116,5 @@
         document.addEventListener("DOMContentLoaded", function() {
             openModal();
         });
-    </script>
+    </script> --}}
 @endsection

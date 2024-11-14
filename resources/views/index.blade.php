@@ -21,7 +21,7 @@
                     <img src="{{ asset('assets/images/nav/kompetensi.png') }}" alt="Kompetensi">
                 </a>
 
-                <a href="{{ route('simulasi') }}"
+                <a href="{{ route('alatbahan') }}"
                     class="absolute top-0 right-1/2 transform translate-x-[150%] lg:translate-x-0 lg:-right-40 w-1/3 md:w-1/4 lg:w-1/3 hover:rotate-12 hover:scale-105 transition-all ease-in-out">
                     <img src="{{ asset('assets/images/nav/simulasi.png') }}" alt="Simulasi">
                 </a>

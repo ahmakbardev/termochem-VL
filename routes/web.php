@@ -53,4 +53,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/percobaan-kalorimeter', function () {
         return view('simulasi.kalorimeter.trial-1');
     })->name('percobaan-kalorimeter');
+    Route::get('/alatbahan', function () {
+        return view('bahan');
+    })->name('alatbahan');
 });

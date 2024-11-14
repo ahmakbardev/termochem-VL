@@ -284,12 +284,18 @@
     </script>
 
     <style>
-        .ion.h-plus,
+        .ion.h-plus{
+            background-color: #f21c1c;
+
+        }
         .ion.ch3coo-minus {
             background-color: #1c64f2;
         }
 
-        .ion.na-plus,
+        .ion.na-plus{
+            background-color: #97a316;
+
+        }
         .ion.hco3-minus {
             background-color: #16a34a;
         }
@@ -451,7 +457,7 @@
             border-radius: 50%;
         }
 
-        .ion.h-plus {
+        /* .ion.h-plus {
             background-color: #1c64f2;
         }
 
@@ -465,7 +471,7 @@
 
         .ion.oh-minus {
             background-color: #16a34a;
-        }
+        } */
 
         .ion.hcl {
             background-color: #1c64f2;
@@ -569,26 +575,6 @@
             /* Atur warna sesuai kebutuhan */
             border-radius: 20px;
             /* Memberikan bentuk elips */
-        }
-
-
-        .ion.h-plus {
-            background-color: #1c64f2;
-        }
-
-        /* Warna biru untuk H+ */
-        .ion.cl-minus {
-            background-color: #1c64f2;
-        }
-
-        /* Warna biru untuk Cl- */
-        .ion.na-plus {
-            background-color: #16a34a;
-        }
-
-        /* Warna hijau untuk Na+ */
-        .ion.oh-minus {
-            background-color: #16a34a;
         }
 
         /* Warna hijau untuk OH- */

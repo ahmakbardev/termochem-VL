@@ -476,7 +476,7 @@
         }
 
         .ion.cl-minus {
-            background-color: #1c64f2;
+            background-color: #f21cb9;
         }
 
         .ion.na-plus {
@@ -484,7 +484,7 @@
         }
 
         .ion.oh-minus {
-            background-color: #16a34a;
+            background-color: #a39a16;
         }
 
         .ion.hcl {
@@ -582,24 +582,6 @@
             border-radius: 50%;
         }
 
-        .ion.h-plus {
-            background-color: #1c64f2;
-        }
-
-        /* Warna biru untuk H+ */
-        .ion.cl-minus {
-            background-color: #1c64f2;
-        }
-
-        /* Warna biru untuk Cl- */
-        .ion.na-plus {
-            background-color: #16a34a;
-        }
-
-        /* Warna hijau untuk Na+ */
-        .ion.oh-minus {
-            background-color: #16a34a;
-        }
 
         /* Warna hijau untuk OH- */
     </style>

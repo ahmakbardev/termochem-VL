@@ -11,23 +11,32 @@
             <!-- Alat dan Bahan Section -->
             <div class="bg-white p-4 rounded-lg shadow-lg w-full max-w-3xl">
                 <h3 class="text-xl font-semibold mb-4">Alat dan Bahan</h3>
-                <ul class="list-disc list-inside text-gray-700 *:mt-2">
+                <ul class="list-disc list-inside text-gray-700">
                     <li><img src="{{ asset('assets/images/kalorimeter.png') }}"
-                            class="inline-block object-contain w-8 h-8 mr-2">Kalorimeter</li>
+                            class="inline-block object-contain w-8 h-8 mr-2">Kalorimeter
+                    </li>
                     <li><img src="{{ asset('assets/images/termometer.png') }}"
-                            class="inline-block object-contain w-8 h-8 mr-2">Termometer</li>
+                            class="inline-block object-contain w-8 h-8 mr-2">Termometer
+                    </li>
                     <li><img src="{{ asset('assets/images/gelas_ukur.png') }}"
-                            class="inline-block object-contain w-8 h-8 mr-2">Gelas ukur</li>
+                            class="inline-block object-contain w-8 h-8 mr-2">Gelas ukur
+                    </li>
                     <li><img src="{{ asset('assets/images/pipet_tetes.png') }}"
                             class="inline-block object-contain w-8 h-8 mr-2">Pipet tetes</li>
-                    <li><img src="{{ asset('assets/images/NaNO.png') }}"
-                            class="inline-block object-contain w-8 h-8 mr-2">NaNO₃ (natrium nitrat)</li>
+                    <li><img src="{{ asset('assets/images/batang_pengaduk.png') }}"
+                            class="inline-block object-contain w-8 h-8 mr-2">Batang
+                        Pengaduk</li>
+                    <li><img src="{{ asset('assets/images/nacl.png') }}"
+                            class="inline-block object-contain w-8 h-8 mr-2">NaCl 1 M</li>
+                    <li><img src="{{ asset('assets/images/naoh.png') }}"
+                            class="inline-block object-contain w-8 h-8 mr-2">NaOH 1 M</li>
                 </ul>
             </div>
 
             <!-- Steps Section -->
             <div class="text-center text-gray-700 mt-4" id="instructions">
-                <p id="stepText">Langkah 1: Tambahkan NaNO₃ ke dalam air di dalam kalorimeter dan amati reaksi.</p>
+                <p id="stepText">Langkah 1: Ukur 100 ml air menggunakan gelas ukur dan tuangkan ke dalam gelas kimia. Catat
+                    suhu awal.</p>
             </div>
 
             <!-- Measurement and Reaction Area -->
@@ -61,17 +70,12 @@
                 </div>
 
                 <!-- Reaction Container -->
-                <div class="relative w-36 h-36 bg-white border-4 border-gray-400 rounded-b-lg overflow-hidden"
-                    id="mainBeaker">
-                    <div id="reactionLiquid" class="absolute bottom-0 w-full h-0 transition-all duration-700 bg-blue-200">
-                    </div>
-
-                    <!-- Molecule Interaction Display -->
-                    <div id="ionContainer"
-                        class="absolute inset-0 flex flex-wrap justify-center items-center space-x-4 hidden">
-                        <div class="ion bg-blue-500 p-2 rounded-full text-white font-semibold">Na⁺</div>
-                        <div class="ion bg-red-500 p-2 rounded-full text-white font-semibold">NO₃⁻</div>
-                        <div class="ion bg-gray-300 p-2 rounded-full text-blue-600 font-semibold">H₂O</div>
+                <div class="flex justify-center space-x-8">
+                    <div id="mainBeaker"
+                        class="relative w-36 h-36 bg-white border-4 border-gray-400 rounded-b-lg overflow-hidden">
+                        <div id="reactionLiquid" class="absolute bottom-0 w-full h-0 transition-all duration-700"></div>
+                        <!-- Ion Display Area -->
+                        <div id="ionDisplay" class="absolute inset-0 flex flex-wrap justify-center items-center"></div>
                     </div>
                 </div>
             </div>
@@ -89,18 +93,22 @@
     <script>
         let currentStep = 1;
         let temperature = 25;
+        let isNaClAdded = false;
+        let isNaOHAdded = false;
 
         function resetSimulation() {
             currentStep = 1;
             temperature = 25;
+            isNaClAdded = false;
+            isNaOHAdded = false;
 
             document.getElementById('temperatureDisplay').innerText = temperature;
             document.getElementById('mercury').style.height = '30%';
             document.getElementById('reactionLiquid').style.height = '0%';
-            document.getElementById('reactionLiquid').classList.remove('bg-purple-500');
+            document.getElementById('reactionLiquid').classList.remove('bg-blue-500', 'bg-green-500', 'bg-purple-500');
             document.getElementById('stepText').innerText =
-                'Langkah 1: Tambahkan NaNO₃ ke dalam air di dalam kalorimeter dan amati reaksi.';
-            document.getElementById('ionContainer').classList.add('hidden');
+                'Langkah 1: Ukur 100 ml air menggunakan gelas ukur dan tuangkan ke dalam gelas kimia. Catat suhu awal.';
+            document.getElementById('ionDisplay').innerHTML = ''; // Reset ions
         }
 
         function nextStep() {
@@ -108,27 +116,60 @@
             const reactionLiquid = document.getElementById('reactionLiquid');
             const temperatureDisplay = document.getElementById('temperatureDisplay');
             const mercury = document.getElementById('mercury');
-            const ionContainer = document.getElementById('ionContainer');
+            const ionDisplay = document.getElementById('ionDisplay');
 
             if (currentStep === 1) {
-                // Step 1: Tambahkan NaNO₃ ke dalam air
-                reactionLiquid.style.height = '25%';
+                // Step 1: Ukur air dan catat suhu awal
                 stepText.innerText =
-                'Langkah 2: Ion Na⁺ dan NO₃⁻ terbentuk, molekul air berinteraksi dengan kristal NaNO₃.';
-                ionContainer.classList.remove('hidden');
+                    'Langkah 2: Timbang 5 gram NaCl, larutkan dalam 50 ml air, dan tambahkan ke dalam gelas kimia.';
+                reactionLiquid.classList.add('bg-blue-500');
+                reactionLiquid.style.height = '25%';
                 currentStep++;
             } else if (currentStep === 2) {
-                // Step 2: Visualisasi ion dan suhu menurun
-                temperature -= 3;
+                // Step 2: Tambahkan NaCl dan catat suhu, tampilkan ion Na⁺ dan Cl⁻
+                temperature += 2;
                 temperatureDisplay.innerText = temperature;
                 mercury.style.height = `${(temperature / 50) * 100}%`;
-                stepText.innerText = 'Reaksi endoterm terjadi, suhu larutan menurun.';
+                stepText.innerText = 'Langkah 3: Catat suhu akhir setelah menambahkan NaCl.';
+                addIon('Na⁺', 'ion-na');
+                addIon('Cl⁻', 'ion-cl');
+                currentStep++;
+            } else if (currentStep === 3) {
+                // Step 3: Persiapan Larutan NaOH
+                stepText.innerText =
+                    'Langkah 4: Timbang 5 gram NaOH, larutkan dalam 50 ml air, dan tambahkan ke dalam gelas kimia.';
+                reactionLiquid.classList.add('bg-green-500');
+                reactionLiquid.style.height = '50%';
+                currentStep++;
+            } else if (currentStep === 4) {
+                // Step 4: Tambahkan NaOH dan catat suhu akhir, tampilkan ion Na⁺ dan OH⁻
+                temperature += 5;
+                temperatureDisplay.innerText = temperature;
+                mercury.style.height = `${(temperature / 50) * 100}%`;
+                stepText.innerText = 'Langkah 5: Catat suhu akhir setelah menambahkan NaOH.';
+                addIon('Na⁺', 'ion-na');
+                addIon('OH⁻', 'ion-oh');
+                currentStep++;
+            } else if (currentStep === 5) {
+                // Step 5: Analisis Data
+                stepText.innerText =
+                    'Langkah 6: Hitung perubahan suhu untuk masing-masing percobaan (ΔT = suhu akhir - suhu awal).';
+                alert(`Perubahan suhu akhir: ΔT = ${temperature - 25}°C`);
                 currentStep++;
             }
+        }
+
+        function addIon(symbol, className) {
+            const ionDisplay = document.getElementById('ionDisplay');
+            const ion = document.createElement('div');
+            ion.className = `ion ${className}`;
+            ion.innerText = symbol;
+            ionDisplay.appendChild(ion);
         }
     </script>
 
     <style>
+        /* Thermometer styling */
         #thermometerContainer {
             background-color: #e2e8f0;
             border-radius: 20px;
@@ -144,12 +185,45 @@
             transition: height 1s ease;
         }
 
+        /* Reaction liquid */
+        #reactionLiquid {
+            background-color: #1c64f2;
+        }
+
+        /* Ion styling */
         .ion {
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 50px;
-            height: 50px;
+            font-weight: bold;
+            color: white;
+            border-radius: 50%;
+            margin: 4px;
+            animation: moveIon 3s infinite alternate ease-in-out;
+        }
+
+        .ion-na {
+            background-color: #3498db;
+        }
+
+        .ion-cl {
+            background-color: #e74c3c;
+        }
+
+        .ion-oh {
+            background-color: #2ecc71;
+        }
+
+        @keyframes moveIon {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-10px);
+            }
         }
     </style>
 @endsection

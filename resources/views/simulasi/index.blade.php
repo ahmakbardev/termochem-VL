@@ -17,10 +17,6 @@
                     Mulai Percobaan
                 </a>
                 <!-- Tooltip for Eksoterm -->
-                <span
-                    class="tooltip absolute top-[3rem] left-1/2 transform -translate-x-1/2 px-3 py-2 rounded-md bg-yellow-500 text-white text-xs opacity-0 transition-opacity duration-200">
-                    Percobaan penggabungan antara NaOH dan HCl yang menghasilkan panas.
-                </span>
             </div>
 
             <!-- Endoterm Section -->
@@ -33,10 +29,6 @@
                     Mulai Percobaan
                 </a>
                 <!-- Tooltip for Endoterm -->
-                <span
-                    class="tooltip absolute top-[2rem] left-1/2 transform -translate-x-1/2 px-3 py-2 rounded-md bg-teal-500 text-white text-xs opacity-0 transition-opacity duration-200">
-                    Percobaan penggabungan antara Cuka (CH₃COOH) dan Baking Soda (NaHCO₃) yang menyerap panas.
-                </span>
             </div>
 
             <!-- Kalorimeter Section -->
@@ -49,10 +41,6 @@
                     Mulai Percobaan
                 </a>
                 <!-- Tooltip for Kalorimeter -->
-                <span
-                    class="tooltip absolute top-[3rem] left-1/2 transform -translate-x-1/2 px-3 py-2 rounded-md bg-indigo-500 text-white text-xs opacity-0 transition-opacity duration-200">
-                    Percobaan pengukuran panas dari suatu reaksi menggunakan kalorimeter.
-                </span>
             </div>
 
         </div>

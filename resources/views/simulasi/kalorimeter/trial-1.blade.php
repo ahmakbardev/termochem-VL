@@ -26,9 +26,9 @@
                     <li><img src="{{ asset('assets/images/batang_pengaduk.png') }}"
                             class="inline-block object-contain w-8 h-8 mr-2">Batang
                         Pengaduk</li>
-                    <li><img src="{{ asset('assets/images/nacl.png') }}"
+                    <li><img src="{{ asset('assets/images/NaCL.png') }}"
                             class="inline-block object-contain w-8 h-8 mr-2">NaCl 1 M</li>
-                    <li><img src="{{ asset('assets/images/naoh.png') }}"
+                    <li><img src="{{ asset('assets/images/NaOH.png') }}"
                             class="inline-block object-contain w-8 h-8 mr-2">NaOH 1 M</li>
                 </ul>
             </div>

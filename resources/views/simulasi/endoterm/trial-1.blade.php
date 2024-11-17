@@ -10,25 +10,25 @@
             <!-- Chemical Containers -->
             <div class="flex justify-center space-x-8">
                 <div id="ch3coohContainer"
-                    class="relative w-36 h-36 bg-white border-4 border-blue-400 rounded-b-lg overflow-hidden cursor-pointer hover:scale-105 transform transition duration-300"
+                    class="relative w-36 h-36 rounded-b-lg overflow-hidden flex flex-col cursor-pointer hover:scale-105 transform transition duration-300"
                     onclick="addCH3COOH()">
-                    <div class="absolute bottom-0 w-full h-1/2 bg-blue-500" id="ch3coohLiquid"></div>
-                    <p class="absolute top-2 left-1/2 text-xs transform -translate-x-1/2 text-gray-700 font-semibold">Cuka
-                        (CH3COOH) 29°C</p>
+                    <img src="{{ asset('assets/images/cuka.png') }}" class="object-contain h-[80%]" alt="">
+                    <p class="text-xs transform text-gray-700 font-semibold text-center">Cuka
+                        (CH<sup>3</sup>COOH)</p>
                 </div>
 
                 <div id="nahco3Container"
-                    class="relative w-36 h-36 bg-white border-4 border-green-400 rounded-b-lg overflow-hidden cursor-pointer hover:scale-105 transform transition duration-300"
+                    class="relative w-36 h-36 rounded-b-lg overflow-hidden flex flex-col cursor-pointer hover:scale-105 transform transition duration-300"
                     onclick="addNaHCO3()">
-                    <div class="absolute bottom-0 w-full h-1/2 bg-green-500" id="nahco3Liquid"></div>
-                    <p class="absolute top-2 left-1/2 text-xs transform -translate-x-1/2 text-gray-700 font-semibold">Baking
-                        Soda (NaHCO3)</p>
+                    <img src="{{ asset('assets/images/soda_kue.png') }}" class="object-contain h-[80%]" alt="">
+                    <p class="text-xs text-gray-700 font-semibold">Baking
+                        Soda (NaHCO<sup>3</sup>)</p>
                 </div>
             </div>
 
             <!-- Thermometer Display -->
             <div class="flex items-center space-x-4 mb-4">
-                <div class="text-lg font-semibold">Suhu: <span id="temperatureDisplay">29</span>°C</div>
+                <div class="text-lg font-semibold">Suhu: <span id="temperatureDisplay">25</span>°C</div>
                 <div id="thermometerContainer" class="relative h-64 w-6 bg-gray-200 rounded-full overflow-hidden">
                     <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-red-500 rounded-full">
                     </div>
@@ -82,7 +82,7 @@
 
             <!-- Steps -->
             <div class="text-center text-gray-700 mt-4" id="instructions">
-                <p id="stepText">Langkah 1: Klik gelas CH3COOH untuk menuangkannya ke dalam gelas utama.</p>
+                <p id="stepText" class="p-3 rounded-sm bg-green-500 text-white">Langkah 1: Klik gelas CH3COOH untuk menuangkannya ke dalam gelas utama.</p>
 
                 <!-- Reset Button -->
                 <button class="mt-6 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
@@ -93,14 +93,14 @@
 
     <script>
         let currentStep = 1;
-        let temperature = 29;
+        let temperature = 25;
         let ch3coohAdded = false;
         let nahco3Added = false;
 
         function resetSimulation() {
             // Reset variables
             currentStep = 1;
-            temperature = 29;
+            temperature = 25;
             ch3coohAdded = false;
             nahco3Added = false;
 
@@ -134,19 +134,34 @@
                 const reactionLiquid = document.getElementById('reactionLiquid');
                 const stepText = document.getElementById('stepText');
                 const moleculeText = document.getElementById('moleculeText');
+                const temperatureDisplay = document.getElementById('temperatureDisplay');
+                const mercury = document.getElementById('mercury');
 
+                // Peningkatan suhu
+                temperature += 4;
+                temperatureDisplay.innerText = temperature;
+
+                // Update tinggi mercury (0°C = 0%, 50°C = 100%)
+                const thermometerHeight = 70; // Tinggi container thermometer dalam piksel
+                mercury.style.height = `${(temperature / 30) * thermometerHeight}px`;
+
+                // Visualisasi CH3COOH
                 ch3coohContainer.classList.add('opacity-50', 'pointer-events-none');
                 reactionLiquid.classList.add('bg-blue-500');
-                reactionLiquid.style.height = '25%';
+                reactionLiquid.style.height = '29%';
 
-                moleculeText.innerText = "";
-                addIon("H+", "h-plus");
-                addIon("CH3COO-", "ch3coo-minus");
+                // Tambahkan ion
+                moleculeText.innerText = '';
+                addIon('H+', 'h-plus');
+                addIon('CH3COO-', 'ch3coo-minus');
+
+                // Update langkah berikutnya
                 stepText.innerText = 'Langkah 2: Klik gelas NaHCO3 untuk menambahkannya ke dalam gelas utama.';
                 ch3coohAdded = true;
                 currentStep++;
             }
         }
+
 
         function addNaHCO3() {
             if (currentStep === 2 && ch3coohAdded) {
@@ -284,18 +299,20 @@
     </script>
 
     <style>
-        .ion.h-plus{
+        .ion.h-plus {
             background-color: #f21c1c;
 
         }
+
         .ion.ch3coo-minus {
             background-color: #1c64f2;
         }
 
-        .ion.na-plus{
+        .ion.na-plus {
             background-color: #97a316;
 
         }
+
         .ion.hco3-minus {
             background-color: #16a34a;
         }
@@ -429,11 +446,11 @@
 
         /* Styling untuk cairan reaksi */
         #reactionLiquid.bg-blue-500 {
-            background-color: #1c64f2;
+            background-color: #abc7ffa4;
         }
 
         #reactionLiquid.bg-purple-500 {
-            background-color: #9333ea;
+            background-color: #4d90f5b9;
         }
 
         #ionContainer {
@@ -458,20 +475,20 @@
         }
 
         /* .ion.h-plus {
-            background-color: #1c64f2;
-        }
+                        background-color: #1c64f2;
+                    }
 
-        .ion.cl-minus {
-            background-color: #1c64f2;
-        }
+                    .ion.cl-minus {
+                        background-color: #1c64f2;
+                    }
 
-        .ion.na-plus {
-            background-color: #16a34a;
-        }
+                    .ion.na-plus {
+                        background-color: #16a34a;
+                    }
 
-        .ion.oh-minus {
-            background-color: #16a34a;
-        } */
+                    .ion.oh-minus {
+                        background-color: #16a34a;
+                    } */
 
         .ion.hcl {
             background-color: #1c64f2;

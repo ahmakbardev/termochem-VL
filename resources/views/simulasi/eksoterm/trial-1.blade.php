@@ -12,19 +12,16 @@
             <!-- Chemical Containers -->
             <div class="flex justify-center space-x-8">
                 <div id="hclContainer"
-                    class="relative w-36 h-36 bg-white border-4 border-blue-400 rounded-b-lg overflow-hidden cursor-pointer hover:scale-105 transform transition duration-300"
+                    class="relative w-36 h-36  rounded-b-lg overflow-hidden cursor-pointer hover:scale-105 transform transition duration-300"
                     onclick="addHCl()">
-                    <div class="absolute bottom-0 w-full h-1/2 bg-blue-500" id="hclLiquid"></div>
-                    <p class="absolute top-2 left-1/2 text-xs transform -translate-x-1/2 text-gray-700 font-semibold">HCl
-                        0,1 M</p>
+                    <img src="{{ asset('assets/images/HCl.png') }}" class="object-contain h-full" alt="">
                 </div>
 
                 <div id="naohContainer"
-                    class="relative w-36 h-36 bg-white border-4 border-green-400 rounded-b-lg overflow-hidden cursor-pointer hover:scale-105 transform transition duration-300"
+                    class="relative w-36 h-36 rounded-b-lg overflow-hidden cursor-pointer hover:scale-105 transform transition duration-300"
                     onclick="addNaOH()">
-                    <div class="absolute bottom-0 w-full h-1/2 bg-green-500" id="naohLiquid"></div>
-                    <p class="absolute top-2 left-1/2 text-xs transform -translate-x-1/2 text-gray-700 font-semibold">NaOH
-                        0,1 M</p>
+                    <img src="{{ asset('assets/images/NaOH.png') }}" class="object-contain h-full" alt="">
+
                 </div>
             </div>
 
@@ -36,7 +33,7 @@
                     </div>
                     <div id="mercury"
                         class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3 bg-red-500 transition-all duration-700"
-                        style="height: 25%;"></div>
+                        style="height: 40%;"></div>
                     <div class="absolute inset-0 flex flex-col items-center">
                         <div class="scale-75 flex flex-col items-center space-y-1 mt-2 text-xs">
                             <span>50°C</span>
@@ -83,8 +80,9 @@
             </div>
 
             <!-- Steps -->
-            <div class="text-center text-gray-700 mt-4" id="instructions">
-                <p id="stepText">Langkah 1: Klik gelas HCl untuk menuangkannya ke dalam gelas utama.</p>
+            <div class="text-center mt-4" id="instructions">
+                <p id="stepText" class="p-3 rounded-sm bg-green-500 text-white"><b>Langkah 1:</b> <br> Klik gelas HCl untuk
+                    menuangkannya ke dalam gelas utama.</p>
 
                 <!-- Reset Button -->
                 <button class="mt-6 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
@@ -99,47 +97,81 @@
         let hclAdded = false;
         let naohAdded = false;
 
+        // Perbarui langkah dengan HTML dan tetap menjaga logika ion
+        function updateStepText(stepHTML) {
+            const stepText = document.getElementById('stepText');
+            stepText.innerHTML = stepHTML; // Perbarui tampilan langkah
+        }
+
+        // Tambahkan HCl ke dalam gelas kimia
         function addHCl() {
             if (currentStep === 1) {
                 const hclContainer = document.getElementById('hclContainer');
                 const reactionLiquid = document.getElementById('reactionLiquid');
-                const stepText = document.getElementById('stepText');
+                const temperatureDisplay = document.getElementById('temperatureDisplay');
+                const mercury = document.getElementById('mercury');
                 const moleculeText = document.getElementById('moleculeText');
 
+                // Visualisasi cairan HCl
                 hclContainer.classList.add('opacity-50', 'pointer-events-none');
                 reactionLiquid.classList.add('bg-blue-500');
                 reactionLiquid.style.height = '25%';
 
-                moleculeText.innerText = "HCl telah ditambahkan.";
-                addIon("H+", "h-plus");
-                addIon("Cl-", "cl-minus");
-                stepText.innerText = 'Langkah 2: Klik gelas NaOH untuk menambahkannya ke dalam gelas utama.';
+                // Tampilkan ion H⁺ dan Cl⁻ di tooltip secara statis
+
+                // Animasi ion di gelas kimia
+                addIon('H<sup>+</sup>', 'h-plus');
+                addIon('Cl<sup>-</sup>', 'cl-minus');
+
+                // Perubahan suhu
+                temperature -= 3;
+                temperatureDisplay.innerText = temperature;
+                mercury.style.height = `${(temperature / 50) * 100}%`;
+
+                // Update langkah
+                updateStepText(
+                    '<b>Langkah 2:</b> <br> Amati dan catat perubahan suhu awal pada larutan HCl. Jika sudah, tambahkan larutan NaOH.'
+                );
+
                 hclAdded = true;
                 currentStep++;
             }
         }
 
+
         function addNaOH() {
             if (currentStep === 2 && hclAdded) {
                 const naohContainer = document.getElementById('naohContainer');
                 const reactionLiquid = document.getElementById('reactionLiquid');
-                const stepText = document.getElementById('stepText');
+                const temperatureDisplay = document.getElementById('temperatureDisplay');
+                const mercury = document.getElementById('mercury');
                 const moleculeText = document.getElementById('moleculeText');
 
+                // Visualisasi cairan NaOH
                 naohContainer.classList.add('opacity-50', 'pointer-events-none');
                 reactionLiquid.classList.remove('bg-blue-500');
                 reactionLiquid.classList.add('bg-purple-500');
                 reactionLiquid.style.height = '50%';
 
-                moleculeText.innerText = "NaOH telah ditambahkan.";
-                addIon("Na+", "na-plus");
-                addIon("OH-", "oh-minus");
-                stepText.innerText = 'Langkah 3: Reaksi eksoterm terjadi, suhu meningkat dan gelembung muncul.';
+
+                // Animasi ion di gelas kimia
+                addIon('Na<sup>+</sup>', 'na-plus');
+                addIon('OH<sup>-</sup>', 'oh-minus');
+
+                // Perubahan suhu
+                temperature += 0;
+                temperatureDisplay.innerText = temperature;
+                mercury.style.height = `${(temperature / 50) * 100}%`;
+
+                // Update langkah
+                updateStepText('<b>Langkah 3:</b> <br> Reaksi eksoterm terjadi, suhu meningkat, dan gelembung muncul.');
+
                 naohAdded = true;
                 currentStep++;
                 startReaction();
             }
         }
+
 
         let ionIndex = 0;
         const minDistance = 50; // Minimal jarak antar ion untuk mencegah tumpang tindih
@@ -151,7 +183,7 @@
             const ionContainer = document.getElementById('ionContainer');
             const ion = document.createElement('div');
             ion.className = `ion ${className}`;
-            ion.innerText = symbol;
+            ion.innerHTML = symbol; // Ganti innerText dengan innerHTML
 
             // Menentukan posisi ion berdasarkan index dengan transformasi dari titik tengah
             const positions = [{
@@ -261,7 +293,7 @@
                 }
 
                 setTimeout(() => {
-                    mercury.style.height = `${((temperature - 20) / (50 - 20)) * 90 + 10}%`;
+                    mercury.style.height = `${((temperature - 19) / (50 - 20)) * 90 + 10}%`;
                     temperatureDisplay.innerText = temperature;
                     document.getElementById('stepText').innerText =
                         'Percobaan selesai. Suhu akhir menunjukkan peningkatan karena reaksi eksoterm.';
@@ -310,8 +342,8 @@
             document.getElementById('moleculeText').innerText = "Tidak ada larutan di dalam gelas kimia.";
 
             // Reset instruction text
-            document.getElementById('stepText').innerText =
-                'Langkah 1: Klik gelas HCl untuk menuangkannya ke dalam gelas utama.';
+            document.getElementById('stepText').innerHTML =
+                '<b>Langkah 1:</b> <br> Klik gelas HCl untuk menuangkannya ke dalam gelas utama.';
         }
     </script>
 
@@ -443,11 +475,11 @@
 
         /* Styling untuk cairan reaksi */
         #reactionLiquid.bg-blue-500 {
-            background-color: #1c64f2;
+            background-color: #abc7ffa4;
         }
 
         #reactionLiquid.bg-purple-500 {
-            background-color: #9333ea;
+            background-color: #4d90f5b9;
         }
 
         #ionContainer {

@@ -11,7 +11,8 @@
             <div
                 class="bg-white p-8 rounded-lg shadow-lg transform transition hover:scale-105 hover:shadow-2xl w-full sm:w-64 text-center relative">
                 <h3 class="text-lg font-semibold mb-4 text-yellow-600">Reaksi Eksoterm</h3>
-                <p class="text-gray-600 mb-4">Eksperimen yang menunjukkan pelepasan energi.</p>
+                <p class="text-gray-600 mb-4">HCl dan NaOH <br>(Eksperimen yang menujukkan pelepaskan kalor dari sistem ke
+                    lingkungan)</p>
                 <a href="{{ route('percobaan-eksoterm') }}"
                     class="w-full inline-block bg-yellow-500 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-yellow-600 transition duration-200 relative tooltip-trigger">
                     Mulai Percobaan
@@ -23,7 +24,10 @@
             <div
                 class="bg-white p-8 rounded-lg shadow-lg transform transition hover:scale-105 hover:shadow-2xl w-full sm:w-64 text-center relative">
                 <h3 class="text-lg font-semibold mb-4 text-teal-600">Reaksi Endoterm</h3>
-                <p class="text-gray-600 mb-4">Eksperimen yang menyerap energi dari lingkungan.</p>
+                <p class="text-gray-600 mb-4">
+                    CH<sub>3</sub>COOH dan NaHCO<sub>3</sub>
+                    <br>(Eksperimen yang menunjukkan pelepasan kalor dari lingkungan ke sistem)
+                </p>
                 <a href="{{ route('percobaan-endoterm') }}"
                     class="w-full inline-block bg-teal-500 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-teal-600 transition duration-200 relative tooltip-trigger">
                     Mulai Percobaan
@@ -35,7 +39,9 @@
             <div
                 class="bg-white p-8 rounded-lg shadow-lg transform transition hover:scale-105 hover:shadow-2xl w-full sm:w-64 text-center relative">
                 <h3 class="text-lg font-semibold mb-4 text-indigo-600">Kalorimeter</h3>
-                <p class="text-gray-600 mb-4">Eksperimen untuk mengukur panas dari suatu reaksi.</p>
+                <p class="text-gray-600 mb-4">HCl dan NaOH
+                    <br>("Eksperimen yang digunakan untuk menentukan perubahan kalor pada suatu reaksi")
+                </p>
                 <a href="{{ route('percobaan-kalorimeter') }}"
                     class="w-full inline-block bg-indigo-500 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-indigo-600 transition duration-200 relative tooltip-trigger">
                     Mulai Percobaan

@@ -5,12 +5,28 @@
         <h2 class="text-center text-3xl font-bold mb-8">Alat dan Bahan Percobaan</h2>
 
         <!-- Table Layout -->
-        <img src="{{ asset('assets/images/scientist.png') }}" alt="Meja" class="object-contain w-1/3 absolute top-1/2 -translate-y-1/2" />
-        <img src="{{ asset('assets/images/meja.png') }}" alt="Meja" class="object-contain w-1/2 absolute top-2/3" />
+        <img src="{{ asset('assets/images/papan_alat.png') }}" alt="Papan Alat dan Bahan"
+            class="object-contain w-1/3 absolute top-1/3 z-[1] -translate-y-1/2 right-20" />
+
+        <!-- Scientist Image -->
+        <img src="{{ asset('assets/images/scientist.png') }}" alt="Scientist"
+            class="object-contain w-1/3 absolute top-1/2 -translate-y-1/2 peer" />
+
+        <!-- Speech Bubble -->
+        <div id="speechBubble"
+            class="hidden absolute top-[-100px] left-[150px] bg-white text-gray-900 p-4 rounded-lg shadow-lg w-72 z-[50] peer-hover:inline">
+            <p class="text-center">Ayo simak...alat dan bahan yang akan kita gunakan untuk praktikum TERMOKIMIA</p>
+            <!-- Arrow -->
+            <div
+                class="absolute top-full left-[15%] w-4 h-4 bg-white rotate-45 transform translate-y-[-50%] shadow-md border border-gray-300">
+            </div>
+        </div>
+
+        <img src="{{ asset('assets/images/meja.png') }}" alt="Meja" class="object-contain w-2/3 absolute top-[65%]" />
         <div class="absolute top-2/3 -translate-y-1/2 w-full flex justify-center">
-            <div class="p-8 mt-24 rounded-lg max-w-md relative">
+            <div class="p-8 mt-36 rounded-lg max-w-md relative">
                 <!-- Alat Section -->
-                <div class="mb-8 grid grid-cols-4 gap-4">
+                <div class="mb-8 grid grid-cols-5 gap-4">
                     <div class="flex flex-col items-center">
                         <img src="{{ asset('assets/images/termometer.png') }}" alt="Termometer"
                             class="object-contain w-20 h-20 hover:scale-110 transition transform duration-200 cursor-pointer"
@@ -31,19 +47,24 @@
                             class="object-contain w-20 h-20 hover:scale-110 transition transform duration-200 cursor-pointer"
                             onmouseover="showTooltip(event, 'Batang Pengaduk')" onmouseout="hideTooltip()" />
                     </div>
+                    <div class="flex flex-col items-center">
+                        <img src="{{ asset('assets/images/kalorimeter.png') }}" alt="Kalorimeter"
+                            class="object-contain w-20 h-20 hover:scale-110 transition transform duration-200 cursor-pointer"
+                            onmouseover="showTooltip(event, 'Kalorimeter')" onmouseout="hideTooltip()" />
+                    </div>
                 </div>
 
                 <!-- Bahan Section -->
                 <div class="grid grid-cols-4 gap-4">
                     <div class="flex flex-col items-center">
-                        <img src="{{ asset('assets/images/NaCl.png') }}" alt="NaCl 1 M"
+                        <img src="{{ asset('assets/images/HCl.png') }}" alt="HCl 1 M"
                             class="object-contain w-20 h-20 hover:scale-110 transition transform duration-200 cursor-pointer"
-                            onmouseover="showTooltip(event, 'NaCl 1 M')" onmouseout="hideTooltip()" />
+                            onmouseover="showTooltip(event, 'HCl 0,1 M')" onmouseout="hideTooltip()" />
                     </div>
                     <div class="flex flex-col items-center">
                         <img src="{{ asset('assets/images/NaOH.png') }}" alt="NaOH 1 M"
                             class="object-contain w-20 h-20 hover:scale-110 transition transform duration-200 cursor-pointer"
-                            onmouseover="showTooltip(event, 'NaOH 1 M')" onmouseout="hideTooltip()" />
+                            onmouseover="showTooltip(event, 'NaOH 0,1 M')" onmouseout="hideTooltip()" />
                     </div>
                     <div class="flex flex-col items-center">
                         <img src="{{ asset('assets/images/cuka.png') }}" alt="Cuka"

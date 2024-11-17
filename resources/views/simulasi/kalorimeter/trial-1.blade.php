@@ -9,7 +9,7 @@
             class="bg-gray-50 p-6 rounded-lg w-4/5 shadow-md flex flex-col items-center space-y-8 relative">
             <!-- Step Display -->
             <div id="stepDisplay" class="w-full max-w-2xl flex justify-center">
-                <img id="stepImage" src="{{ asset('assets/images/kalorimeter.png') }}" alt="Langkah 1"
+                <img id="stepImage" src="{{ asset('assets/images/kalorimeter_1.png') }}" alt="Langkah 1"
                     class="w-full max-w-xs rounded-lg shadow-lg">
             </div>
 
@@ -33,7 +33,7 @@
 
         // Data for each step
         const steps = [{
-                image: "{{ asset('assets/images/kalorimeter.png') }}",
+                image: "{{ asset('assets/images/kalorimeter_1.png') }}",
                 text: "Langkah 1: Siapkan Kalorimeter."
             },
             {

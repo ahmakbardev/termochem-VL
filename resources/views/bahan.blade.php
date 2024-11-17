@@ -48,7 +48,7 @@
                             onmouseover="showTooltip(event, 'Batang Pengaduk')" onmouseout="hideTooltip()" />
                     </div>
                     <div class="flex flex-col items-center">
-                        <img src="{{ asset('assets/images/kalorimeter.png') }}" alt="Kalorimeter"
+                        <img src="{{ asset('assets/images/kalorimeter_1.png') }}" alt="Kalorimeter"
                             class="object-contain w-20 h-20 hover:scale-110 transition transform duration-200 cursor-pointer"
                             onmouseover="showTooltip(event, 'Kalorimeter')" onmouseout="hideTooltip()" />
                     </div>

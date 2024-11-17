@@ -13,22 +13,22 @@
 
                 <a href="{{ route('materi') }}"
                     class="absolute top-0 left-1/2 transform -translate-x-[150%] lg:translate-x-0 lg:-left-40 w-1/3 md:w-1/4 lg:w-1/3 hover:-rotate-12 hover:scale-105 transition-all ease-in-out">
-                    <img src="{{ asset('assets/images/nav/materi.png') }}" alt="Materi">
+                    <img src="{{ asset('assets/images/nav/materi_1.png') }}" alt="Materi">
                 </a>
 
                 <a href="{{ route('kompetensi') }}"
                     class="absolute top-1/2 left-1/2 transform -translate-x-[150%] lg:translate-x-0 lg:-left-48 w-1/3 md:w-1/4 lg:w-1/3 hover:-rotate-12 hover:scale-105 transition-all ease-in-out">
-                    <img src="{{ asset('assets/images/nav/kompetensi.png') }}" alt="Kompetensi">
+                    <img src="{{ asset('assets/images/nav/kompetensi_1.png') }}" alt="Kompetensi">
                 </a>
 
                 <a href="{{ route('alatbahan') }}"
                     class="absolute top-0 right-1/2 transform translate-x-[150%] lg:translate-x-0 lg:-right-40 w-1/3 md:w-1/4 lg:w-1/3 hover:rotate-12 hover:scale-105 transition-all ease-in-out">
-                    <img src="{{ asset('assets/images/nav/simulasi.png') }}" alt="Simulasi">
+                    <img src="{{ asset('assets/images/nav/simulasi_1.png') }}" alt="Simulasi">
                 </a>
 
                 <a href=""
                     class="absolute top-1/2 right-1/2 transform translate-x-[150%] lg:translate-x-0 lg:-right-48 w-1/3 md:w-1/4 lg:w-1/3 hover:rotate-12 hover:scale-105 transition-all ease-in-out">
-                    <img src="{{ asset('assets/images/nav/uji.png') }}" alt="Uji">
+                    <img src="{{ asset('assets/images/nav/uji_1.png') }}" alt="Uji">
                 </a>
             </div>
         </div> <!-- end of container -->

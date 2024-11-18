@@ -14,13 +14,13 @@
                 <div id="hclContainer"
                     class="relative w-36 h-36  rounded-b-lg overflow-hidden cursor-pointer hover:scale-105 transform transition duration-300"
                     onclick="addHCl()">
-                    <img src="{{ asset('assets/images/HCl.png') }}" class="object-contain h-full" alt="">
+                    <img src="{{ asset('assets/images/HCl_2.png') }}" class="object-contain h-full" alt="">
                 </div>
 
                 <div id="naohContainer"
                     class="relative w-36 h-36 rounded-b-lg overflow-hidden cursor-pointer hover:scale-105 transform transition duration-300"
                     onclick="addNaOH()">
-                    <img src="{{ asset('assets/images/NaOH.png') }}" class="object-contain h-full" alt="">
+                    <img src="{{ asset('assets/images/NaOH_2.png') }}" class="object-contain h-full" alt="">
 
                 </div>
             </div>

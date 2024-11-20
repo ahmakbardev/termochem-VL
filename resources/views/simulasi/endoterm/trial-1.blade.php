@@ -12,17 +12,17 @@
                 <div id="ch3coohContainer"
                     class="relative w-36 h-36 rounded-b-lg overflow-hidden flex flex-col cursor-pointer hover:scale-105 transform transition duration-300"
                     onclick="addCH3COOH()">
-                    <img src="{{ asset('assets/images/cuka_2.png') }}" class="object-contain h-[80%]" alt="">
+                    <img src="{{ asset('assets/images/cuka_3.png') }}" class="object-contain h-[80%]" alt="">
                     <p class="text-xs transform text-gray-700 font-semibold text-center">Cuka
-                        (CH<sup>3</sup>COOH)</p>
+                        (CH<sub>3</sub>COOH)</p>
                 </div>
 
                 <div id="nahco3Container"
                     class="relative w-36 h-36 rounded-b-lg overflow-hidden flex flex-col cursor-pointer hover:scale-105 transform transition duration-300"
                     onclick="addNaHCO3()">
-                    <img src="{{ asset('assets/images/soda_2.png') }}" class="object-contain h-[80%]" alt="">
+                    <img src="{{ asset('assets/images/baking_3.png') }}" class="object-contain h-[80%]" alt="">
                     <p class="text-xs text-gray-700 font-semibold">Baking
-                        Soda (NaHCO<sup>3</sup>)</p>
+                        Soda (NaHCO<sub>3</sub>)</p>
                 </div>
             </div>
 

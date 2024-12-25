@@ -43,6 +43,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/simulasi', function () {
         return view('simulasi.index');
     })->name('simulasi');
+    Route::get('/uji', function () {
+        return view('uji');
+    })->name('uji');
 
     Route::get('/percobaan-eksoterm', function () {
         return view('simulasi.eksoterm.trial-1');

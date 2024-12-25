@@ -26,7 +26,7 @@
                     <img src="{{ asset('assets/images/nav/simulasi_1.png') }}" alt="Simulasi">
                 </a>
 
-                <a href=""
+                <a href="{{ route('uji') }}"
                     class="absolute top-1/2 right-1/2 transform translate-x-[150%] lg:translate-x-0 lg:-right-48 w-1/3 md:w-1/4 lg:w-1/3 hover:rotate-12 hover:scale-105 transition-all ease-in-out">
                     <img src="{{ asset('assets/images/nav/uji_1.png') }}" alt="Uji">
                 </a>

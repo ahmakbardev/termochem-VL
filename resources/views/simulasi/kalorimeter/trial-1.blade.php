@@ -49,7 +49,7 @@
                 text: "Langkah 4: Aduk larutan di dalam kalorimeter."
             },
             {
-                image: "{{ asset('assets/images/step_5.png') }}",
+                image: "{{ asset('assets/images/step_5-5.png') }}",
                 text: "Langkah 5: Amati kenaikan suhu setelah larutan diaduk."
             },
         ];

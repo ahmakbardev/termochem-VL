@@ -45,7 +45,7 @@
                 text: "Langkah 3: Masukkan NaOH ke dalam kalorimeter."
             },
             {
-                image: "{{ asset('assets/images/step_4.png') }}",
+                image: "{{ asset('assets/images/step_4-5.png') }}",
                 text: "Langkah 4: Aduk larutan di dalam kalorimeter."
             },
             {

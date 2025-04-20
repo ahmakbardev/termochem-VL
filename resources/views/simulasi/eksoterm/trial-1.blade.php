@@ -19,7 +19,7 @@
                         <img src="{{ asset('assets/images/simulasi/NaOH.png') }}" alt="NaOH"
                             class="w-32 cursor-pointer hover:scale-110 transition" onclick="addSubstance('naoh')" />
                         <!-- NaHCO3 -->
-                        <img src="{{ asset('assets/images/simulasi/NaHCO3.webp') }}" alt="NaHCO3"
+                        <img src="{{ asset('assets/images/simulasi/nahco3.webp') }}" alt="NaHCO3"
                             class="w-32 cursor-pointer hover:scale-110 transition" onclick="addSubstance('nahco3')" />
                         <!-- H2O -->
                         <img src="{{ asset('assets/images/simulasi/h2o.webp') }}" alt="H2O"

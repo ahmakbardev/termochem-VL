@@ -2,91 +2,121 @@
 
 @section('content')
     <div class="container mx-auto px-4 py-8 h-full flex justify-center items-center flex-col">
-        <h2 class="text-center text-3xl font-bold mb-8">Simulasi Percobaan Reaksi Eksoterm (Percobaan 1)</h2>
+        <h2 class="text-center text-3xl font-bold mb-8">Simulasi Percobaan Reaksi Eksoterm dan Endoterm</h2>
 
 
 
         <!-- Simulation Area -->
-        <div id="simulationArea"
-            class="bg-blue-50 p-6 rounded-lg w-4/5 shadow-md flex flex-col items-center space-y-8 relative">
+        <div id="simulationArea" class="bg-[#e6eb8c] p-6 rounded-lg gap-10 shadow-md flex items-center space-y-8 relative">
             <!-- Chemical Containers -->
-            <div class="flex justify-center space-x-8">
-                <div id="hclContainer"
-                    class="relative w-36 h-36  rounded-b-lg overflow-hidden cursor-pointer hover:scale-105 transform transition duration-300"
-                    onclick="addHCl()">
-                    <img src="{{ asset('assets/images/HCl_2.png') }}" class="object-contain h-full" alt="">
-                </div>
-
-                <div id="naohContainer"
-                    class="relative w-36 h-36 rounded-b-lg overflow-hidden cursor-pointer hover:scale-105 transform transition duration-300"
-                    onclick="addNaOH()">
-                    <img src="{{ asset('assets/images/NaOH_2.png') }}" class="object-contain h-full" alt="">
-
-                </div>
+            <div class="flex flex-col">
+                <h4 class="bg-[#ffd51e] text-center mb-3 rounded-md text-[#037940]">Bahan</h1>
+                    <div class="flex flex-col items-center space-y-4 p-4 rounded-md bg-white">
+                        <!-- HCl -->
+                        <img src="{{ asset('assets/images/simulasi/HCl.png') }}" alt="HCl"
+                            class="w-32 cursor-pointer hover:scale-110 transition" onclick="addSubstance('hcl')" />
+                        <!-- NaOH -->
+                        <img src="{{ asset('assets/images/simulasi/NaOH.png') }}" alt="NaOH"
+                            class="w-32 cursor-pointer hover:scale-110 transition" onclick="addSubstance('naoh')" />
+                        <!-- NaHCO3 -->
+                        <img src="{{ asset('assets/images/simulasi/NaHCO3.webp') }}" alt="NaHCO3"
+                            class="w-32 cursor-pointer hover:scale-110 transition" onclick="addSubstance('nahco3')" />
+                        <!-- H2O -->
+                        <img src="{{ asset('assets/images/simulasi/h2o.webp') }}" alt="H2O"
+                            class="w-32 cursor-pointer hover:scale-110 transition" onclick="addSubstance('h2o')" />
+                    </div>
             </div>
+
+            {{-- <div class="flex flex-col">
+
+            </div> --}}
 
             <!-- Thermometer Display -->
-            <div class="flex items-center space-x-4 mb-4">
-                <div class="text-lg font-semibold">Suhu: <span id="temperatureDisplay">25</span>°C</div>
-                <div id="thermometerContainer" class="relative h-64 w-6 bg-gray-200 rounded-full overflow-hidden">
-                    <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-red-500 rounded-full">
-                    </div>
-                    <div id="mercury"
-                        class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3 bg-red-500 transition-all duration-700"
-                        style="height: 40%;"></div>
-                    <div class="absolute inset-0 flex flex-col items-center">
-                        <div class="scale-75 flex flex-col items-center space-y-1 mt-2 text-xs">
-                            <span>50°C</span>
-                            <div class="w-2 h-0.5 bg-black"></div>
-                            <span>40°C</span>
-                            <div class="w-2 h-0.5 bg-black"></div>
-                            <span>30°C</span>
-                            <div class="w-2 h-0.5 bg-black"></div>
-                            <span>20°C</span>
-                            <div class="w-2 h-0.5 bg-black"></div>
-                            <span>10°C</span>
-                            <div class="w-2 h-0.5 bg-black"></div>
-                            <span>0°C</span>
+            <div class="flex flex-col">
+                <div class="flex gap-5">
+                    <div class="flex flex-col">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="text-lg font-semibold">Suhu: <span id="temperatureDisplay">25</span>°C</div>
+                            <div id="thermometerContainer"
+                                class="relative h-64 w-6 bg-gray-200 rounded-full overflow-hidden">
+                                <div
+                                    class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-red-500 rounded-full">
+                                </div>
+                                <div id="mercury"
+                                    class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3 bg-red-500 transition-all duration-700"
+                                    style="height: 40%;"></div>
+                                <div class="absolute inset-0 flex flex-col items-center">
+                                    <div class="scale-75 flex flex-col items-center space-y-1 mt-2 text-xs">
+                                        <span>50°C</span>
+                                        <div class="w-2 h-0.5 bg-black"></div>
+                                        <span>40°C</span>
+                                        <div class="w-2 h-0.5 bg-black"></div>
+                                        <span>30°C</span>
+                                        <div class="w-2 h-0.5 bg-black"></div>
+                                        <span>20°C</span>
+                                        <div class="w-2 h-0.5 bg-black"></div>
+                                        <span>10°C</span>
+                                        <div class="w-2 h-0.5 bg-black"></div>
+                                        <span>0°C</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex">
+                            <div class="relative w-32 h-40 bg-white border-4 border-gray-400 rounded-b-lg overflow-hidden"
+                                id="mainBeaker">
+                                <div id="reactionLiquid" class="absolute bottom-0 w-full h-0 transition-all duration-700">
+                                </div>
+                                <div id="reactionBubbles"
+                                    class="hidden absolute inset-0 flex justify-center items-center flex-wrap space-x-2 space-y-2">
+                                </div>
+                                <div id="smoke"
+                                    class="hidden absolute inset-0 flex justify-center items-center opacity-0">
+                                    <div class="smoke-particle"></div>
+                                    <div class="smoke-particle"></div>
+                                    <div class="smoke-particle"></div>
+                                </div>
+                            </div>
+
+                            <!-- Molecule Tooltip -->
+                            <div id="moleculeInfo"
+                                class="hidden absolute left-3/4 -translate-x-2/3 bg-white p-4 rounded-lg shadow-lg text-sm text-gray-700 border border-gray-300 w-48 h-44">
+                                <div class="relative h-[80%]">
+                                    <p id="moleculeText" class="text-center"></p>
+                                    <div id="ionContainer" class="absolute inset-0"></div>
+                                    <div
+                                        class="absolute top-1/2 left-[-6px] transform -translate-y-1/2 w-3 h-3 bg-white border-r border-t border-gray-300 rotate-45">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="flex">
-                <div class="relative w-32 h-40 bg-white border-4 border-gray-400 rounded-b-lg overflow-hidden"
-                    id="mainBeaker">
-                    <div id="reactionLiquid" class="absolute bottom-0 w-full h-0 transition-all duration-700"></div>
-                    <div id="reactionBubbles"
-                        class="hidden absolute inset-0 flex justify-center items-center flex-wrap space-x-2 space-y-2">
-                    </div>
-                    <div id="smoke" class="hidden absolute inset-0 flex justify-center items-center opacity-0">
-                        <div class="smoke-particle"></div>
-                        <div class="smoke-particle"></div>
-                        <div class="smoke-particle"></div>
-                    </div>
-                </div>
-
-                <!-- Molecule Tooltip -->
-                <div id="moleculeInfo"
-                    class="hidden absolute left-3/4 -translate-x-2/3 bg-white p-4 rounded-lg shadow-lg text-sm text-gray-700 border border-gray-300 w-48 h-44">
-                    <div class="relative h-[80%]">
-                        <p id="moleculeText" class="text-center">Tidak ada larutan di dalam gelas kimia.</p>
-                        <div id="ionContainer" class="absolute inset-0"></div>
-                        <div
-                            class="absolute top-1/2 left-[-6px] transform -translate-y-1/2 w-3 h-3 bg-white border-r border-t border-gray-300 rotate-45">
-                        </div>
+                    <!-- Prosedur Panel -->
+                    <div class="flex flex-col items-center">
+                        <h4 class="bg-[#ffd51e] text-center mb-3 rounded-md text-[#037940]">Prosedur</h4>
+                        <ul class="bg-white p-4 rounded-md space-y-2 text-sm text-[#037940]">
+                            <li>• Masukkan larutan yang akan diuji ke dalam gelas kimia</li>
+                            <li>• Amati perubahan suhu awal larutan</li>
+                            <li>• Tambahkan larutan berikutnya</li>
+                            <li>• Amati perubahan suhu akhir yang terjadi</li>
+                        </ul>
+                        <!-- Reset Button -->
+                        <button class="mt-6 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                            onclick="resetSimulation()">Mulai Lagi</button>
                     </div>
                 </div>
-            </div>
 
-            <!-- Steps -->
-            <div class="text-center mt-4" id="instructions">
-                <p id="stepText" class="p-3 rounded-sm bg-green-500 text-white"><b>Langkah 1:</b> <br> Klik gelas HCl untuk
-                    menuangkannya ke dalam gelas utama.</p>
 
-                <!-- Reset Button -->
-                <button class="mt-6 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-                    onclick="resetSimulation()">Mulai Lagi</button>
+                <!-- Steps -->
+                <div class="text-center mt-4" id="instructions">
+                    <p id="stepText" class="p-3 rounded-sm bg-green-500 text-white"><b>Langkah 1:</b> <br> Klik gelas HCl
+                        untuk
+                        menuangkannya ke dalam gelas utama.</p>
+
+                </div>
+
             </div>
         </div>
     </div>
@@ -96,6 +126,137 @@
         let temperature = 25;
         let hclAdded = false;
         let naohAdded = false;
+
+        let experimentType = 'hcl_water';
+        let initialTemperature = 22;
+        let finalTemperature = 29;
+
+        let firstSubstance = null;
+        let secondSubstance = null;
+
+        function addSubstance(type) {
+            const beaker = document.getElementById('reactionLiquid');
+            const tempDisplay = document.getElementById('temperatureDisplay');
+            const mercury = document.getElementById('mercury');
+
+            if (!firstSubstance) {
+                firstSubstance = type;
+                temperature = getInitialTemperature(type);
+                tempDisplay.innerText = temperature;
+                mercury.style.height = `${(temperature / 50) * 100}%`;
+                beaker.style.height = '25%';
+
+                updateStepText(`<b>Langkah 2:</b> Tambahkan zat kedua untuk memulai reaksi.`);
+
+                if (type === 'hcl') addIon('H<sup>+</sup>', 'h-plus'), addIon('Cl<sup>-</sup>', 'cl-minus');
+                if (type === 'naoh') addIon('Na<sup>+</sup>', 'na-plus'), addIon('OH<sup>-</sup>', 'oh-minus');
+                if (type === 'nahco3') addIon('Na<sup>+</sup>', 'na-plus'), addIon('HCO<sub>3</sub><sup>-</sup>',
+                    'oh-minus');
+                if (type === 'h2o') addIon('H<sup>+</sup>', 'h-plus'), addIon('OH<sup>-</sup>', 'oh-minus');
+
+            } else if (!secondSubstance && firstSubstance !== type) {
+                secondSubstance = type;
+                const combo = [firstSubstance, secondSubstance].sort().join('_');
+                const result = getReactionResult(combo);
+
+                temperature = result.final;
+                tempDisplay.innerText = temperature;
+                mercury.style.height = `${(temperature / 50) * 100}%`;
+                beaker.style.height = '50%';
+                beaker.classList.add(result.color);
+                updateStepText(`${result.message}`);
+
+                // Tambahkan ion dari zat kedua
+                if (type === 'hcl') {
+                    addIon('H<sup>+</sup>', 'h-plus');
+                    addIon('Cl<sup>-</sup>', 'cl-minus');
+                }
+                if (type === 'naoh') {
+                    addIon('Na<sup>+</sup>', 'na-plus');
+                    addIon('OH<sup>-</sup>', 'oh-minus');
+                }
+                if (type === 'nahco3') {
+                    addIon('Na<sup>+</sup>', 'na-plus');
+                    addIon('HCO<sub>3</sub><sup>-</sup>', 'oh-minus');
+                }
+                if (type === 'h2o') {
+                    addIon('H<sup>+</sup>', 'h-plus');
+                    addIon('OH<sup>-</sup>', 'oh-minus');
+                }
+
+                showBubblesAndSmoke();
+            }
+        }
+
+        function getInitialTemperature(substance) {
+            if (substance === 'hcl') return 22;
+            if (substance === 'naoh') return 29;
+            if (substance === 'nahco3') return 28;
+            if (substance === 'h2o') return 22;
+            return 25;
+        }
+
+        function getReactionResult(combo) {
+            const reactions = {
+                'h2o_hcl': {
+                    final: 29,
+                    message: 'Reaksi eksoterm: HCl + H₂O, suhu meningkat.',
+                    color: 'bg-blue-500'
+                },
+                'hcl_naoh': {
+                    final: 32,
+                    message: 'Reaksi netralisasi eksoterm: HCl + NaOH.',
+                    color: 'bg-purple-500'
+                },
+                'h2o_naoh': {
+                    final: 31,
+                    message: 'Reaksi eksoterm ringan: NaOH + H₂O.',
+                    color: 'bg-green-400'
+                },
+                'hcl_nahco3': {
+                    final: 25,
+                    message: 'Reaksi eksoterm ringan: HCl + NaHCO₃.',
+                    color: 'bg-yellow-400'
+                },
+                'nahco3_naoh': {
+                    final: 25,
+                    message: 'Reaksi endoterm: NaOH + NaHCO₃.',
+                    color: 'bg-indigo-400'
+                },
+                'h2o_nahco3': {
+                    final: 26,
+                    message: 'Reaksi endoterm: NaHCO₃ + H₂O.',
+                    color: 'bg-cyan-400'
+                }
+            };
+
+
+            return reactions[combo] || {
+                final: temperature,
+                message: 'Reaksi tidak diketahui.',
+                color: 'bg-gray-400'
+            };
+        }
+
+
+
+        function selectExperiment(type) {
+            experimentType = type;
+
+            if (type === 'hcl_water') {
+                initialTemperature = 22;
+                finalTemperature = 29;
+            } else if (type === 'hcl_naoh') {
+                initialTemperature = 22;
+                finalTemperature = 32;
+            } else if (type === 'naoh_water') {
+                initialTemperature = 29;
+                finalTemperature = 31;
+            }
+
+            resetSimulation(); // reset ulang simulasi dengan data suhu baru
+        }
+
 
         // Perbarui langkah dengan HTML dan tetap menjaga logika ion
         function updateStepText(stepHTML) {
@@ -183,68 +344,69 @@
             const ionContainer = document.getElementById('ionContainer');
             const ion = document.createElement('div');
             ion.className = `ion ${className}`;
-            ion.innerHTML = symbol; // Ganti innerText dengan innerHTML
+            ion.innerHTML = symbol;
 
-            // Menentukan posisi ion berdasarkan index dengan transformasi dari titik tengah
             const positions = [{
                     x: -120,
                     y: -50
-                }, // Kiri atas
+                },
                 {
                     x: 120,
                     y: -50
-                }, // Kanan atas
+                },
                 {
                     x: -50,
                     y: 50
-                }, // Kiri bawah
+                },
                 {
                     x: 50,
                     y: 50
-                } // Kanan bawah
+                }
             ];
-
             const position = positions[ionIndex % positions.length];
             ion.style.position = 'absolute';
             ion.style.transform = `translate(${position.x}%, ${position.y}%)`;
 
-            // Tambahkan elemen ion ke dalam ionContainer
             ionContainer.appendChild(ion);
             ionIndex++;
 
-            // Menyimpan data posisi dan kecepatan ion
-            const speedFactor = 0.55; // Mengatur faktor kecepatan lebih kecil untuk gerakan lebih lambat
+            // Speed config per ion type
+            const speedMap = {
+                'h-plus': 1.2,
+                'cl-minus': 0.8,
+                'na-plus': 1.0,
+                'oh-minus': 0.9,
+                'reaction': 1.5,
+                'default': 0.55
+            };
+
+            const speedFactor = speedMap[className] || speedMap['default'];
             let dx = (Math.random() < 0.5 ? 1 : -1) * speedFactor;
             let dy = (Math.random() < 0.5 ? 1 : -1) * speedFactor;
+
             const ionData = {
                 element: ion,
                 dx,
                 dy
             };
-
-
-            ions.push(ionData); // Tambahkan ion ke array ions
+            ions.push(ionData);
 
             function moveIon() {
                 const containerRect = ionContainer.getBoundingClientRect();
                 const ionRect = ion.getBoundingClientRect();
 
-                // Deteksi tabrakan dengan dinding container
                 if (ionRect.left <= containerRect.left) ionData.dx = Math.abs(ionData.dx);
                 if (ionRect.right >= containerRect.right) ionData.dx = -Math.abs(ionData.dx);
                 if (ionRect.top <= containerRect.top) ionData.dy = Math.abs(ionData.dy);
                 if (ionRect.bottom >= containerRect.bottom) ionData.dy = -Math.abs(ionData.dy);
 
-                // Update posisi ion
                 ion.style.left = `${ion.offsetLeft + ionData.dx}px`;
                 ion.style.top = `${ion.offsetTop + ionData.dy}px`;
 
-                // Cek tabrakan dengan ion lain
                 for (let i = 0; i < ions.length; i++) {
                     if (ions[i].element !== ion) {
                         const otherRect = ions[i].element.getBoundingClientRect();
                         if (checkCollision(ionRect, otherRect)) {
-                            // Balikkan arah kedua ion saat bertabrakan
                             ionData.dx *= -1;
                             ionData.dy *= -1;
                             ions[i].dx *= -1;
@@ -256,9 +418,9 @@
                 requestAnimationFrame(moveIon);
             }
 
-            // Mulai gerakan ion
             requestAnimationFrame(moveIon);
         }
+
 
         // Fungsi untuk mengecek tabrakan antara dua kotak
         function checkCollision(rect1, rect2) {
@@ -281,7 +443,10 @@
                 reactionBubbles.classList.remove('hidden');
                 smoke.classList.remove('hidden');
                 smoke.classList.add('opacity-100');
-                temperature += 10;
+                temperature = finalTemperature;
+                temperatureDisplay.innerText = temperature;
+                mercury.style.height = `${(temperature / 50) * 100}%`;
+
 
                 for (let i = 0; i < 8; i++) {
                     const bubble = document.createElement('div');
@@ -316,34 +481,36 @@
         });
 
         function resetSimulation() {
-            // Reset variables
+            // Reset semua status
             currentStep = 1;
             temperature = 25;
-            hclAdded = false;
-            naohAdded = false;
+            firstSubstance = null;
+            secondSubstance = null;
 
-            // Reset thermometer display
+            // Reset tampilan suhu dan thermometer
             document.getElementById('temperatureDisplay').innerText = temperature;
-            document.getElementById('mercury').style.height = '25%';
+            document.getElementById('mercury').style.height = `${(temperature / 50) * 100}%`;
 
-            // Reset liquid colors and heights
-            document.getElementById('reactionLiquid').classList.remove('bg-blue-500', 'bg-purple-500');
-            document.getElementById('reactionLiquid').style.height = '0%';
+            // Reset cairan di gelas
+            const reactionLiquid = document.getElementById('reactionLiquid');
+            reactionLiquid.className = 'absolute bottom-0 w-full h-0 transition-all duration-700';
+            reactionLiquid.style.height = '0%';
 
-            // Reset chemical container opacity and pointer events
-            document.getElementById('hclContainer').classList.remove('opacity-50', 'pointer-events-none');
-            document.getElementById('naohContainer').classList.remove('opacity-50', 'pointer-events-none');
+            // Reset bubble dan asap
+            document.getElementById('reactionBubbles').classList.add('hidden');
+            document.getElementById('reactionBubbles').innerHTML = '';
+            document.getElementById('smoke').classList.add('hidden');
+            document.getElementById('smoke').classList.remove('opacity-100');
 
-            // Reset ions in the container
+            // Reset ion
             document.getElementById('ionContainer').innerHTML = '';
-            ions = []; // Clear the ions array
+            ions = [];
 
-            // Reset molecule text
-            document.getElementById('moleculeText').innerText = "Tidak ada larutan di dalam gelas kimia.";
+            // Reset tooltip
+            document.getElementById('moleculeText').innerText = "";
 
-            // Reset instruction text
-            document.getElementById('stepText').innerHTML =
-                '<b>Langkah 1:</b> <br> Klik gelas HCl untuk menuangkannya ke dalam gelas utama.';
+            // Reset langkah
+            updateStepText('<b>Langkah 1:</b> <br> Klik salah satu bahan untuk memulai percobaan.');
         }
     </script>
 

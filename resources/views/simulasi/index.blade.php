@@ -10,9 +10,9 @@
             <!-- Eksoterm Section -->
             <div
                 class="bg-white p-8 rounded-lg shadow-lg transform transition hover:scale-105 hover:shadow-2xl w-full sm:w-64 text-center relative">
-                <h3 class="text-lg font-semibold mb-4 text-yellow-600">Reaksi Eksoterm</h3>
-                <p class="text-gray-600 mb-4">HCl dan NaOH <br>(Eksperimen yang menujukkan pelepaskan kalor dari sistem ke
-                    lingkungan)</p>
+                <h3 class="text-lg font-semibold mb-4 text-yellow-600">Reaksi Eksoterm dan Endoterm</h3>
+                <p class="text-gray-600 mb-4">Uji reaksi HCl, NaOH, H₂O, dan NaHCO₃ secara interaktif. <br>
+                    Amati perubahan suhu pada reaksi eksoterm, endoterm, dan netralisasi dalam simulasi visual.</p>
                 <a href="{{ route('percobaan-eksoterm') }}"
                     class="w-full inline-block bg-yellow-500 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-yellow-600 transition duration-200 relative tooltip-trigger">
                     Mulai Percobaan
@@ -20,7 +20,7 @@
                 <!-- Tooltip for Eksoterm -->
             </div>
 
-            <!-- Endoterm Section -->
+            {{-- <!-- Endoterm Section -->
             <div
                 class="bg-white p-8 rounded-lg shadow-lg transform transition hover:scale-105 hover:shadow-2xl w-full sm:w-64 text-center relative">
                 <h3 class="text-lg font-semibold mb-4 text-teal-600">Reaksi Endoterm</h3>
@@ -33,7 +33,7 @@
                     Mulai Percobaan
                 </a>
                 <!-- Tooltip for Endoterm -->
-            </div>
+            </div> --}}
 
             <!-- Kalorimeter Section -->
             <div

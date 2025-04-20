@@ -22,11 +22,15 @@
             </div>
         </div>
 
-        <img src="{{ asset('assets/images/meja.png') }}" alt="Meja" class="object-contain w-2/3 absolute top-[65%]" />
+        <img src="{{ asset('assets/images/simulasi/bg-index-sim.webp') }}" alt="Meja"
+            class="object-contain w-screen absolute top-0 z[0]" />
+
+
+        {{-- <img src="{{ asset('assets/images/meja.png') }}" alt="Meja" class="object-contain w-2/3 absolute top-[65%]" /> --}}
         <div class="absolute top-2/3 -translate-y-1/2 w-full flex justify-center">
-            <div class="p-8 mt-36 rounded-lg max-w-md relative">
+            <div class="p-8 mt-36 rounded-lg max-w-2xl relative">
                 <!-- Alat Section -->
-                <div class="mb-8 grid grid-cols-5 gap-4">
+                <div class="mb-8 flex gap-4">
                     <div class="flex flex-col items-center">
                         <img src="{{ asset('assets/images/termometer.png') }}" alt="Termometer"
                             class="object-contain w-20 h-20 hover:scale-110 transition transform duration-200 cursor-pointer"
@@ -52,10 +56,6 @@
                             class="object-contain w-20 h-20 hover:scale-110 transition transform duration-200 cursor-pointer"
                             onmouseover="showTooltip(event, 'Kalorimeter')" onmouseout="hideTooltip()" />
                     </div>
-                </div>
-
-                <!-- Bahan Section -->
-                <div class="grid grid-cols-4 gap-4">
                     <div class="flex flex-col items-center">
                         <img src="{{ asset('assets/images/HCl.png') }}" alt="HCl 1 M"
                             class="object-contain w-20 h-20 hover:scale-110 transition transform duration-200 cursor-pointer"
@@ -78,16 +78,16 @@
                     </div>
                 </div>
             </div>
+            <div class="absolute text-center mt-32">
+                <a href="{{ route('simulasi') }}"
+                    class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-200">Pilih
+                    Percobaan</a>
+            </div>
         </div>
 
         <!-- Tooltip -->
         <div id="tooltip" class="hidden bg-gray-900 text-white text-xs rounded py-1 px-3 opacity-90 fixed z-50"></div>
 
-        <div class="text-center mt-6">
-            <a href="{{ route('simulasi') }}"
-                class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-200">Pilih
-                Percobaan</a>
-        </div>
     </div>
 
     <script>

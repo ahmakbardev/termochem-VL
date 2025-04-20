@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Header -->
-    <header id="header" class="header h-full text-center lg:text-left py-8 lg:py-0">
+    <header id="header" class="bg-[#e6eb8c] h-full text-center lg:text-left py-8 lg:py-0">
         <div class="container h-full px-4 flex flex-col items-center justify-center">
             <div class="flex flex-col text-center mb-6 lg:mb-0">
                 <h1 class="text-3xl lg:text-5xl font-semibold">Virtual Laboratorium</h1>
@@ -13,22 +13,22 @@
 
                 <a href="{{ route('materi') }}"
                     class="absolute top-0 left-1/2 transform -translate-x-[150%] lg:translate-x-0 lg:-left-40 w-1/3 md:w-1/4 lg:w-1/3 hover:-rotate-12 hover:scale-105 transition-all ease-in-out">
-                    <img src="{{ asset('assets/images/nav/materi_1.png') }}" alt="Materi">
+                    <img src="{{ asset('assets/images/index/materi.png') }}" alt="Materi">
                 </a>
 
                 <a href="{{ route('kompetensi') }}"
                     class="absolute top-1/2 left-1/2 transform -translate-x-[150%] lg:translate-x-0 lg:-left-48 w-1/3 md:w-1/4 lg:w-1/3 hover:-rotate-12 hover:scale-105 transition-all ease-in-out">
-                    <img src="{{ asset('assets/images/nav/kompetensi_1.png') }}" alt="Kompetensi">
+                    <img src="{{ asset('assets/images/index/kompetensi.png') }}" alt="Kompetensi">
                 </a>
 
                 <a href="{{ route('alatbahan') }}"
                     class="absolute top-0 right-1/2 transform translate-x-[150%] lg:translate-x-0 lg:-right-40 w-1/3 md:w-1/4 lg:w-1/3 hover:rotate-12 hover:scale-105 transition-all ease-in-out">
-                    <img src="{{ asset('assets/images/nav/simulasi_1.png') }}" alt="Simulasi">
+                    <img src="{{ asset('assets/images/index/simulasi.png') }}" alt="Simulasi">
                 </a>
 
                 <a href="{{ route('uji') }}"
                     class="absolute top-1/2 right-1/2 transform translate-x-[150%] lg:translate-x-0 lg:-right-48 w-1/3 md:w-1/4 lg:w-1/3 hover:rotate-12 hover:scale-105 transition-all ease-in-out">
-                    <img src="{{ asset('assets/images/nav/uji_1.png') }}" alt="Uji">
+                    <img src="{{ asset('assets/images/index/uji.png') }}" alt="Uji">
                 </a>
             </div>
         </div> <!-- end of container -->

@@ -117,7 +117,7 @@
         }
     </script>
 
-    <!-- Modal for Automatic Tutorial with Carousel -->
+    {{-- <!-- Modal for Automatic Tutorial with Carousel -->
     <div id="modalTutorial" class="fixed inset-0 hidden bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
         <div
             class="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 transform transition-all duration-300 opacity-0 scale-75">
@@ -150,7 +150,7 @@
                     class="close-tutorial bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-200">Mengerti</button>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <style>
         .modal {

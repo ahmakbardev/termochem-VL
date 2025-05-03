@@ -80,7 +80,7 @@
                             </div>
 
                             <!-- Molecule Tooltip -->
-                            <div id="moleculeInfo"
+                            {{-- <div id="moleculeInfo"
                                 class="hidden absolute left-3/4 -translate-x-2/3 bg-white p-4 rounded-lg shadow-lg text-sm text-gray-700 border border-gray-300 w-48 h-44">
                                 <div class="relative h-[80%]">
                                     <p id="moleculeText" class="text-center"></p>
@@ -89,13 +89,13 @@
                                         class="absolute top-1/2 left-[-6px] transform -translate-y-1/2 w-3 h-3 bg-white border-r border-t border-gray-300 rotate-45">
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
 
                     <!-- Prosedur Panel -->
                     <div class="flex flex-col items-center">
-                        <h4 class="bg-[#ffd51e] text-center mb-3 rounded-md text-[#037940]">Prosedur</h4>
+                        <h4 class="bg-[#ffd51e] text-center mb-3 px-5 rounded-md text-[#037940]">Prosedur</h4>
                         <ul class="bg-white p-4 rounded-md space-y-2 text-sm text-[#037940]">
                             <li>• Masukkan larutan yang akan diuji ke dalam gelas kimia</li>
                             <li>• Amati perubahan suhu awal larutan</li>
@@ -111,7 +111,8 @@
 
                 <!-- Steps -->
                 <div class="text-center mt-4" id="instructions">
-                    <p id="stepText" class="p-3 rounded-sm bg-green-500 text-white"><b>Langkah 1:</b> <br> Klik gelas HCl
+                    <p id="stepText" class="p-3 rounded-sm bg-green-500 max-w-xl text-white"><b>Langkah 1:</b> <br> Klik
+                        gelas HCl
                         untuk
                         menuangkannya ke dalam gelas utama.</p>
 
@@ -200,32 +201,32 @@
             const reactions = {
                 'h2o_hcl': {
                     final: 29,
-                    message: 'Reaksi eksoterm: HCl + H₂O, suhu meningkat.',
+                    message: 'Amati perubahan yang terjadi Ketika HCl dilarutkan dalam air, terjadi pelepasan panas, yang berarti energi dilepaskan ke lingkungan. Ini disebabkan oleh interaksi antara ion H⁺ dan Cl⁻ dengan molekul air, yang membantu memecah ikatan dalam asam dan memfasilitasi pembentukan ion.',
                     color: 'bg-blue-500'
                 },
                 'hcl_naoh': {
                     final: 32,
-                    message: 'Reaksi netralisasi eksoterm: HCl + NaOH.',
+                    message: 'Amati perubahan yang terjadi ketika HCl dan NaOH dicampurkan bereaksi melalui proses netralisasi. Proses pembentukan ikatan baru ini melepaskan energi dalam bentuk panas. Hal ini menyebabkan suhu larutan meningkat dan dinding gelas kimia terasa panas',
                     color: 'bg-purple-500'
                 },
                 'h2o_naoh': {
                     final: 31,
-                    message: 'Reaksi eksoterm ringan: NaOH + H₂O.',
+                    message: 'Amati perubahan yang terjadi antara Reaksi natrium hidroksida (NaOH) dan H2O dimana dalam proses ini energi dilepaskan ke lingkungan saat NaOH terdisosiasi menjadi ion Na⁺ dan OH⁻ dalam larutan. Proses ini menghasilkan panas, yang menyebabkan peningkatan suhu larutan.',
                     color: 'bg-green-400'
                 },
                 'hcl_nahco3': {
                     final: 25,
-                    message: 'Reaksi eksoterm ringan: HCl + NaHCO₃.',
+                    message: 'Amati perubahan yang terjadi antara Reaks asam klorida (HCl) dan natrium bikarbonat (NaHCO₃) adalah reaksi yang menghasilkan gas karbon dioksida (CO₂), air (H₂O), dan natrium klorida (NaCl), meskipun ada pelepasan gas, reaksi ini juga melepaskan sejumlah kecil energi dalam bentuk panas ke lingkungan.',
                     color: 'bg-yellow-400'
                 },
                 'nahco3_naoh': {
                     final: 25,
-                    message: 'Reaksi endoterm: NaOH + NaHCO₃.',
+                    message: 'Amati perubahan yang terjadi antara Reaksi natrium hidroksida (NaOH) dan natrium bikarbonat (NaHCO₃) adalah reaksi yang melibatkan asam dan basa. Ketika keduanya dicampurkan, NaOH dapat bereaksi dengan NaHCO₃ untuk menghasilkan natrium karbonat (Na₂CO₃), air (H₂O), dan gas karbon dioksida (CO₂) yang terlepas, pembentukan produk baru dapat menyerap sejumlah energi dari lingkungan.',
                     color: 'bg-indigo-400'
                 },
                 'h2o_nahco3': {
                     final: 26,
-                    message: 'Reaksi endoterm: NaHCO₃ + H₂O.',
+                    message: 'Amati perubahan yang terjadi antara Reaksi natrium bikarbonat (NaHCO₃) dan air (H₂O) biasanya tidak menghasilkan reaksi kimia yang signifikan. Namun, ketika NaHCO₃ dilarutkan dalam air, proses ini dapat mempengaruhi suhu. Ini berarti bahwa energi diserap dari lingkungan, yang dapat menyebabkan sedikit penurunan suhu pada larutan.',
                     color: 'bg-cyan-400'
                 }
             };

@@ -10,9 +10,10 @@
             <!-- Eksoterm Section -->
             <div
                 class="bg-white p-8 rounded-lg shadow-lg transform transition hover:scale-105 hover:shadow-2xl w-full sm:w-64 text-center relative">
-                <h3 class="text-lg font-semibold mb-4 text-yellow-600">Reaksi Eksoterm dan Endoterm</h3>
-                <p class="text-gray-600 mb-4">Uji reaksi HCl, NaOH, H₂O, dan NaHCO₃ secara interaktif. <br>
-                    Amati perubahan suhu pada reaksi eksoterm, endoterm, dan netralisasi dalam simulasi visual.</p>
+                <h3 class="text-lg font-semibold mb-4 text-yellow-600">PERCOBAAN 1</h3>
+                <p class="text-gray-600 mb-4">REAKSI EKSOTERM & ENDOTERM
+                    HCl, NaOH, H2O dan NaHCO3
+                </p>
                 <a href="{{ route('percobaan-eksoterm') }}"
                     class="w-full inline-block bg-yellow-500 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-yellow-600 transition duration-200 relative tooltip-trigger">
                     Mulai Percobaan
@@ -38,9 +39,9 @@
             <!-- Kalorimeter Section -->
             <div
                 class="bg-white p-8 rounded-lg shadow-lg transform transition hover:scale-105 hover:shadow-2xl w-full sm:w-64 text-center relative">
-                <h3 class="text-lg font-semibold mb-4 text-indigo-600">Kalorimeter</h3>
-                <p class="text-gray-600 mb-4">HCl dan NaOH
-                    <br>("Eksperimen yang digunakan untuk menentukan perubahan kalor pada suatu reaksi")
+                <h3 class="text-lg font-semibold mb-4 text-indigo-600">PERCOBAAN 2</h3>
+                <p class="text-gray-600 mb-4">KALORIMETER
+                    HCl dan HaOH
                 </p>
                 <a href="{{ route('percobaan-kalorimeter') }}"
                     class="w-full inline-block bg-indigo-500 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-indigo-600 transition duration-200 relative tooltip-trigger">
@@ -53,7 +54,7 @@
     </div>
 
     <!-- Modal for Tutorial -->
-    <div class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50">
+    {{-- <div class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50">
         <div
             class="bg-white rounded-lg shadow-lg max-w-md w-full absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 p-6">
             <button
@@ -76,7 +77,7 @@
                 <button class="next px-4 py-2 bg-gray-300 rounded-full hover:bg-gray-400">Next</button>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <style>
         .modal {

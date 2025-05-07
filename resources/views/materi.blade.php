@@ -7,16 +7,31 @@
             <!-- Sidebar Navigation -->
             <aside class="lg:w-1/4 hidden lg:block">
                 <nav class="space-y-4 sticky top-28">
-                    <a href="#materi1" class="block px-4 py-2 bg-gray-100 rounded-md hover:bg-gray-200">Kegiatan Belajar I:
-                        Konsep Dasar Termokimia</a>
+                    <a href="#materi1" class="block px-4 py-2 bg-gray-100 rounded-md hover:bg-gray-200">KONSEP DASAR
+                        TERMOKIMIA: Perubahan Kalor Reaksi Kimia</a>
                     <a href="#materi2" class="block px-4 py-2 bg-gray-100 rounded-md hover:bg-gray-200">Sistem dan
                         Lingkungan</a>
                     <a href="#materi3" class="block px-4 py-2 bg-gray-100 rounded-md hover:bg-gray-200">Energi dan Perubahan
                         Energi</a>
                     <a href="#materi4" class="block px-4 py-2 bg-gray-100 rounded-md hover:bg-gray-200">Reaksi Eksoterm dan
                         Endoterm</a>
+                    <a href="#persamaan-termokimia"
+                        class="block px-4 py-2 bg-gray-100 rounded-md hover:bg-gray-200">Persamaan Termokimia</a>
+                    <a href="#perubahan-kimia"
+                        class="block px-4 py-2 bg-gray-100 rounded-md hover:bg-gray-200">JENIS-JENIS PERUBAHAN ENTALPI:
+                        Entalpi Perubahan Kimia</a>
+                    <a href="#enthalpi" class="block px-4 py-2 bg-gray-100 rounded-md hover:bg-gray-200">PENENTUAN PERUBAHAN
+                        ENTALPI: Berdasarkan Data Percobaan</a>
+                    <a href="#hukum-hess" class="block px-4 py-2 bg-gray-100 rounded-md hover:bg-gray-200">Berdasarkan Hukum
+                        Hess</a>
+                    <a href="#entalpi-pembentukan"
+                        class="block px-4 py-2 bg-gray-100 rounded-md hover:bg-gray-200">Berdasarkan Data Entalpi
+                        Pembentukan</a>
+                    <a href="#energi-ikatan" class="block px-4 py-2 bg-gray-100 rounded-md hover:bg-gray-200">Berdasarkan
+                        Data Energi Ikatan</a>
                 </nav>
             </aside>
+
 
             <!-- Main Content -->
             <main class="lg:w-3/4">
@@ -260,11 +275,13 @@
                             pada penulisan persamaan termokimia harus disertakan.</p>
                         <p>Yang tidak boleh dilupakan, penulisan fase dari zat-zatnya, misalnya fase padat atau solid
                             <strong>(s)</strong>, fase cair atau aqueous <strong>(aq)</strong>, fase gas
-                            <strong>(g)</strong> serta fase liquid <strong>(l)</strong> untuk pelarut murni.</p>
+                            <strong>(g)</strong> serta fase liquid <strong>(l)</strong> untuk pelarut murni.
+                        </p>
                         <p>Contoh persamaan termokimia pembakaran metana (CH₄) adalah sebagai berikut:</p>
                         <p class="text-center font-semibold">CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l)  ΔH = –890,4 kJ/mol</p>
 
-                        <p class="mt-6">Panduan di bawah ini dapat membantu penulisan dan penafsiran persamaan termokimia:
+                        <p class="mt-6">Panduan di bawah ini dapat membantu penulisan dan penafsiran persamaan
+                            termokimia:
                         </p>
                         <ul class="list-disc ml-5">
                             <li>Koefisien stoikiometri selalu menunjukkan jumlah mol zat. Jadi, persamaan untuk pembakaran
@@ -476,7 +493,7 @@
                             </article>
                         </section> --}}
 
-                        <h3 class="font-semibold mt-4">Entalpi Perubahan Kimia:</h3>
+                        <h3 class="font-semibold mt-4" id="perubahan-kimia">Entalpi Perubahan Kimia:</h3>
                         <p>Data entalpi perubahan kimia biasanya diberikan dalam keadaan standar. Entalpi standar perubahan
                             kimia terdiri dari entalpi pembentukan standar, entalpi atomisasi standar, entalpi pembakaran
                             standar, entalpi netralisasi standar, dan entalpi pelarutan standar.</p>
@@ -1098,7 +1115,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <h4 class="text-lg font-bold text-gray-700 mt-6 mb-4">B. Berdasarkan Hukum Hess</h4>
+                    <h4 class="text-lg font-bold text-gray-700 mt-6 mb-4" id="hukum-hess">B. Berdasarkan Hukum Hess</h4>
                     <p class="text-gray-700">
                         Perubahan entalpi kadang sukar diukur atau ditentukan langsung dengan percobaan. Pada tahun 1840
                         Henry Hess dari Jerman menyatakan, perubahan entalpi reaksi hanya tergantung pada keadaan awal dan
@@ -1205,7 +1222,7 @@
                         </p>
                     </aside>
 
-                    <h5 class="text-md font-bold text-gray-700 mt-6 mb-2">C. Berdasarkan Data Entalpi Pembentukan</h5>
+                    <h5 class="text-md font-bold text-gray-700 mt-6 mb-2" id="entalpi-pembentukan">C. Berdasarkan Data Entalpi Pembentukan</h5>
                     <p class="text-gray-700">
                         Kalor suatu reaksi juga dapat ditentukan dari data entalpi pembentukan (ΔH<sup>f</sup>) zat-zat
                         pereaksi (reaktan) dan zat-zat hasil reaksi (produk).
@@ -1256,7 +1273,7 @@
                         </p>
                     </section>
 
-                    <h3 class="text-lg font-bold text-gray-800 mt-6">D. Berdasarkan Data Energi Ikatan</h3>
+                    <h3 class="text-lg font-bold text-gray-800 mt-6" id="energi-ikatan">D. Berdasarkan Data Energi Ikatan</h3>
                     <p>
                         Pada dasarnya reaksi kimia terdiri dari dua proses, yaitu pemutusan ikatan antar atom-atom dari
                         senyawa yang bereaksi (proses yang memerlukan energi) dan penggabungan ikatan kembali dari atom-atom

@@ -70,6 +70,9 @@
                             pelajari perubahannya. Sedangkan yang disebut <strong>lingkungan</strong> adalah segala sesuatu
                             di luar sistem.</p>
                         <h3 class="font-semibold mt-4">Jenis-jenis Sistem</h3>
+                        <p>Pada saat mempelajari termokimia, kita harus paham mana yang menjadi pusat pengamatan, mana yang
+                            bukan. Sistem adalah segala sesuatu yang menjadi pusat perhatian yang kita pelajari perubahan
+                            energinya. Sedangkan yang disebut lingkungan adalah segala sesuatu di luar sistem</p>
                         <ul class="list-disc ml-5">
                             <li><strong>Sistem terbuka:</strong> suatu sistem yang memungkinkan terjadinya pertukaran kalor
                                 dan materi antara lingkungan dan sistem.</li>
@@ -88,7 +91,18 @@
                         </div>
                         <div class="bg-gray-100 p-4 rounded-md mt-6">
                             <h3 class="font-semibold text-lg text-gray-800">Contoh:</h3>
-                            <p>Untuk mengurangi bahan bakar fosil yang tak terbarukan...</p>
+                            <p>Untuk mengurangi bahan bakar fosil yang tak terbarukan dibutuhkan bahan bakar alternatif.
+                                Salah satunya menggunakan bahan baku di sekitar kita yang dapat diolah menjadi bioetanol.
+                                Bioetanol adalah etanol yang dibuat dari sumber hayati seperti tebu, sari buah sorgum,
+                                singkong, garut, ubi jalar, jagung, beras, jerami dan kayu. Bahan baku untuk produksi
+                                bioetanol meliputi komponen yang mengandung pati, karbohidrat, glukosa dan selulosa. Proses
+                                mengubah pati menjadi etanol terdiri dari tiga langkah yaitu pretreatment, sakarifikasi atau
+                                hidrolisis menjadi monosakarida, dan fermentasi monosakarida menjadi etanol. Untuk
+                                meningkatkan kadar etanol, proses yang paling utama dalam produksi bioetanol adalah proses
+                                fermentasi. Selama proses ini, ragi memecah molekul glukosa menjadi alkohol (etanol).
+                                Fermentasi dilakukan dengan menambahkan saccharomyces cerevisiae, urea, dan NPK pada sampel
+                                (bahan baku) kemudian sampel didiamkan pada suhu kamar. Jika sampel ditetapkan sebagai
+                                sistem, manakah yang termasuk lingkungan?</p>
                         </div>
                     </article>
                 </section>
@@ -103,27 +117,63 @@
                             atau berubah bentuk. Pada hukum termodinamika, dikenal istilah hukum kekekalan energi yang
                             menyatakan energi tidak dapat diciptakan atau tidak dapat dimusnahkan, energi hanya dapat
                             berubah dari bentuk yang satu ke bentuk energi yang lainnya.</p>
+
                         <p>Setiap materi mengandung energi yang disebut <strong>energi dalam</strong>. Energi dalam
                             merupakan total energi yang dimiliki oleh suatu benda. Besarnya energi ini tidak dapat diukur,
                             yang dapat diukur hanyalah perubahannya atau ΔE. Perubahan energi dalam ditentukan oleh keadaan
                             akhir dan keadaan awal.</p>
+
                         <p>Dalam termodinamika, perubahan energi dalam adalah kombinasi dari kalor yang ditransfer dan kerja
-                            yang dilakukan. Sehingga, secara matematis rumus energi dalam dapat dituliskan sebagai berikut:
+                            yang dilakukan. Sehingga secara matematis rumus energi dalam dapat dituliskan sebagai berikut:
                         </p>
+
                         <p class="text-center font-semibold">ΔE = q + w</p>
-                        <h3 class="font-semibold text-lg">Contoh:</h3>
+
+                        <p>Di mana q merupakan jumlah kalor sistem dan w merupakan kerja, yaitu merupakan kemampuan
+                            melakukan usaha. Nilai q dan w bisa positif atau negatif. Untuk menentukan nilai q dan w
+                            digunakan aturan berikut:</p>
+                        <ul>
+                            <li>q bernilai positif (+) jika sistem menyerap kalor (q &gt; 0).</li>
+                            <li>q bernilai negatif (−) jika sistem melepas kalor (q &lt; 0).</li>
+                            <li>w bernilai positif (+) jika sistem menerima kerja (w &gt; 0).</li>
+                            <li>w bernilai negatif (−) jika sistem melakukan kerja (w &lt; 0).</li>
+                        </ul>
+
+                        <h3 class="font-semibold text-lg">Contoh</h3>
                         <p>Suatu sistem menyerap kalor sebesar 300 kJ setelah melakukan kerja sebesar 125 kJ. Tentukan
                             perubahan energi yang terjadi!</p>
-                        <p class="bg-gray-100 p-4 rounded-md">
-                            <strong>Pembahasan:</strong><br> Diketahui q = 300 kJ, w = -125 kJ, maka ΔE = 300 kJ - 125 kJ =
-                            175 kJ.
-                        </p>
+                        <div class="bg-blue-50 p-4 rounded-md">
+                            <p><strong>Pembahasan:</strong></p>
+                            <p>Diketahui: sistem melakukan kerja = −125 kJ, sistem menyerap kalor = +300 kJ</p>
+                            <p>Ditanyakan: perubahan energi dalam?</p>
+                            <p>Jawab:</p>
+                            <p>ΔE = q + w = 300 kJ + (−125 kJ) = 175 kJ</p>
+                            <p>Jadi, perubahan energi dalam pada sistem tersebut adalah +175 kJ</p>
+                        </div>
+
+                        <p>Dalam tekanan konstan, kerja yang dilakukan oleh gas ketika volumenya berubah diberikan oleh
+                            persamaan:</p>
+                        <p class="text-center font-semibold">w = PΔV</p>
+
+                        <p>Karena reaksi kimia biasa terjadi pada tekanan tetap dan tidak terjadi perubahan volume, maka
+                            nilai ΔV = 0, maka kerja (w) akan bernilai = 0. Sehingga besarnya ΔE akan ditunjukan oleh
+                            besarnya kalor yang dimiliki oleh benda tersebut, secara matematis dituliskan:</p>
+                        <p class="text-center font-semibold">ΔE = q</p>
+
+                        <p>Pada termodinamika, total energi dalam (E) dikenal dengan istilah <strong>Entalpi (H)</strong>,
+                            yaitu jumlah total energi dari suatu sistem yang diukur pada kondisi tekanan tetap. Sama dengan
+                            Energi dalam, entalpi tidak dapat diukur besarnya, yang dapat ditentukan besarnya adalah
+                            perubahan entalpi, ΔH. Dengan demikian besarnya perubahan entalpi merupakan besarnya nilai kalor
+                            yang dimiliki oleh suatu sistem.</p>
+
+                        <p class="text-center font-semibold">ΔH = q</p>
+
+                        <p>Besarnya perubahan entalpi berarti selisih antara entalpi akhir dan entalpi awal. Secara
+                            matematis dapat dituliskan:</p>
+                        <p class="text-center font-semibold">ΔH = H akhir − H awal</p>
                     </article>
-                    <aside class="bg-blue-50 p-4 rounded-md mt-6 shadow-md">
-                        <h3 class="font-semibold text-lg text-blue-600">Tahukah Kamu?</h3>
-                        <p>Energi, tekanan, volume, dan suhu dikatakan sebagai fungsi keadaan...</p>
-                    </aside>
                 </section>
+
 
                 <!-- Materi 4 -->
                 <section id="materi4" class="mb-12">
@@ -131,8 +181,10 @@
                         <h2 class="text-2xl font-semibold text-gray-800">Reaksi Eksoterm dan Endoterm</h2>
                     </header>
                     <article class="prose lg:prose-lg max-w-none">
-                        <p>Berdasarkan arah berpindahnya kalor dalam sistem dan lingkungan, maka reaksi dibedakan menjadi
-                            dua jenis, yaitu <strong>reaksi eksoterm</strong> dan <strong>reaksi endoterm</strong>.</p>
+                        <p><span class="font-semibold">Berdasarkan arah</span> berpindahnya kalor dalam sistem dan
+                            lingkungan, maka reaksi dibedakan menjadi dua jenis, yaitu <strong>reaksi eksoterm</strong> dan
+                            <strong>reaksi endoterm</strong>.
+                        </p>
                         <ol class="list-decimal ml-5">
                             <li>
                                 <strong>Reaksi Eksoterm</strong> (berasal dari kata eks (keluar) dan therm (panas)), yaitu
@@ -149,48 +201,53 @@
                             <figure class="w-2/3">
                                 <img src="{{ asset('assets/images/materi/2reaksi.png') }}"
                                     alt="Reaksi Eksoterm dan Endoterm" class="w-full rounded-md shadow-md">
-                                <figcaption class="text-sm text-center text-gray-500">Gambar 4: Kalor diserap dari
-                                    lingkungan ke sistem (ΔH = +) dan Kalor dilepas dari sistem ke lingkungan (ΔH = -)
+                                <figcaption class="text-sm text-center text-gray-500">Gambar 4. Kalor diserap dari
+                                    lingkungan ke sistem (ΔH = +) dan Kalor dilepas dari sistem ke lingkungan (ΔH = −)
                                 </figcaption>
                             </figure>
                         </div>
+
                         <h3 class="font-semibold text-lg text-gray-800 mt-6">Contoh:</h3>
                         <p>Gasifikasi adalah proses konversi bahan bakar padat seperti batu bara menjadi wujud gas. Terdapat
                             empat tahap dalam suatu proses gasifikasi antara lain penguapan, pirolisis, oksidasi, dan
                             reduksi. Pada tahap oksidasi terjadi proses pembakaran menggunakan bantuan udara dan
                             menghasilkan gas yang terbakar secara sempurna. Gas karbondioksida timbul bersamaan dengan
                             energi panas. Apakah reaksi tersebut eksoterm atau endoterm?</p>
+
                         <p class="font-semibold mt-4">Jawaban:</p>
                         <p>Tahap oksidasi disertai dengan pelepasan gas karbondioksida dan energi panas. Pelepasan energi
                             panas menunjukkan kalor berpindah dari sistem ke lingkungan, di mana suhu lingkungan menjadi
                             meningkat sehingga dapat disimpulkan bahwa proses oksidasi pada gasifikasi termasuk reaksi
                             eksoterm.</p>
-                        <ol class="list-decimal ml-5">
+
+                        <ol class="list-decimal ml-5 mt-4">
                             <li>
-                                Bila <strong>entalpi produk > entalpi reaktan</strong>, maka ΔH bertanda positif, berarti
-                                terjadi penyerapan kalor dari lingkungan ke sistem (reaksi endoterm). Contohnya reaksi
-                                penguraian merkuri(II) oksida (HgO) pada suhu tinggi:
-                                <p class="text-center font-semibold">energi + 2HgO(s) → 2Hg(l) + O<sub>2</sub>(g)</p>
+                                Bila <strong>entalpi produk &gt; entalpi reaktan</strong>, maka ΔH bertanda
+                                <strong>positif</strong>, berarti terjadi penyerapan kalor dari lingkungan ke sistem (reaksi
+                                endoterm). Contohnya reaksi penguraian merkuri(II) oksida (HgO) pada suhu tinggi:
+                                <p class="text-center font-semibold mt-2">energi + 2HgO(s) → 2Hg(l) + O<sub>2</sub>(g)</p>
                             </li>
-                            <li>
-                                Bila <strong>entalpi reaktan > entalpi produk</strong>, maka ΔH bertanda negatif, berarti
-                                terjadi pelepasan kalor dari sistem ke lingkungan (reaksi eksoterm). Contohnya pembakaran
-                                gas asetilena (C<sub>2</sub>H<sub>2</sub>) dalam oksigen yang melepaskan sejumlah energi
-                                yang cukup besar:
-                                <p class="text-center font-semibold">2C<sub>2</sub>H<sub>2</sub>(g) + 5O<sub>2</sub>(g) →
-                                    4CO<sub>2</sub>(g) + 2H<sub>2</sub>O(l) + energi</p>
+                            <li class="mt-4">
+                                Bila <strong>entalpi reaktan &gt; entalpi produk</strong>, maka ΔH bertanda
+                                <strong>negatif</strong>, berarti terjadi pelepasan kalor dari sistem ke lingkungan (reaksi
+                                eksoterm). Contohnya pembakaran gas asetilena (C<sub>2</sub>H<sub>2</sub>) dalam oksigen
+                                yang melepaskan sejumlah energi yang cukup besar:
+                                <p class="text-center font-semibold mt-2">2C<sub>2</sub>H<sub>2</sub>(g) + 5O<sub>2</sub>(g)
+                                    → 4CO<sub>2</sub>(g) + 2H<sub>2</sub>O(l) + energi</p>
                             </li>
                         </ol>
-                        <div class="flex justify-center mt-4">
+
+                        <div class="flex justify-center mt-6">
                             <figure class="w-full flex flex-col items-center justify-center">
                                 <img src="{{ asset('assets/images/materi/endo&ekso.png') }}"
                                     alt="Diagram Enthalpi Eksoterm dan Endoterm" class="w-2/3 rounded-md shadow-md">
-                                <figcaption class="text-sm text-center text-gray-500">Gambar 5: Reaksi eksoterm (kiri) dan
+                                <figcaption class="text-sm text-center text-gray-500">Gambar 5. Reaksi eksoterm (kiri) dan
                                     Reaksi endoterm (kanan)</figcaption>
                             </figure>
                         </div>
                     </article>
                 </section>
+
                 <!-- Persamaan Termokimia -->
                 <section id="persamaan-termokimia" class="mb-12">
                     <header class="mb-6">
@@ -199,31 +256,53 @@
                     <article class="prose lg:prose-lg max-w-none">
                         <p>Persamaan termokimia memberikan informasi tentang suatu reaksi mengenai jumlah mol reaktan dan
                             produk serta jumlah energi yang terlibat di dalamnya. Penulisan persamaan termokimia mirip
-                            dengan penulisan reaksi biasa, termasuk jenis atom dan jumlah atomnya. Perbedaannya, ∆H reaksi
+                            dengan penulisan reaksi biasa, termasuk jenis atom dan jumlah atomnya. Perbedaannya, ΔH reaksi
                             pada penulisan persamaan termokimia harus disertakan.</p>
+                        <p>Yang tidak boleh dilupakan, penulisan fase dari zat-zatnya, misalnya fase padat atau solid
+                            <strong>(s)</strong>, fase cair atau aqueous <strong>(aq)</strong>, fase gas
+                            <strong>(g)</strong> serta fase liquid <strong>(l)</strong> untuk pelarut murni.</p>
                         <p>Contoh persamaan termokimia pembakaran metana (CH₄) adalah sebagai berikut:</p>
-                        <p class="text-center font-semibold">CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l) ΔH = –890,4 kJ/mol</p>
-                        <p>Panduan di bawah ini dapat membantu penulisan dan penafsiran persamaan termokimia:</p>
+                        <p class="text-center font-semibold">CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l)  ΔH = –890,4 kJ/mol</p>
+
+                        <p class="mt-6">Panduan di bawah ini dapat membantu penulisan dan penafsiran persamaan termokimia:
+                        </p>
                         <ul class="list-disc ml-5">
-                            <li>Koefisien stoikiometri menunjukkan jumlah mol zat.</li>
-                            <li>Jika suatu persamaan dibalik, nilai ΔH tetap tetapi tandanya berubah.</li>
-                            <li>Jika persamaan dikalikan dengan faktor n, maka ΔH juga dikalikan dengan faktor yang sama.
+                            <li>Koefisien stoikiometri selalu menunjukkan jumlah mol zat. Jadi, persamaan untuk pembakaran
+                                metana kita artikan: Ketika 1 mol gas metana bereaksi dengan 2 mol gas oksigen membentuk 1
+                                mol gas karbon dioksida dan 2 mol air. Perubahan entalpinya adalah –890,4 kJ.</li>
+                            <li>Ketika kita membalik suatu persamaan termokimia, kita mengubah peran reaktan dan produk.
+                                Konsekuensinya, besar ΔH untuk persamaan termokimia itu konstan atau sama, tetapi tandanya
+                                berubah. Sebagai contoh, jika suatu reaksi menyerap energi termal dari lingkungannya (yaitu
+                                reaksinya endotermik), maka reaksi kebalikannya harus membebaskan kembali energi termal ke
+                                lingkungannya (yaitu reaksinya harus eksotermik) dan ungkapan perubahan entalpi juga harus
+                                mengubah tandanya.</li>
+                            <li>Jika kita mengalikan kedua ruas persamaan termokimia dengan suatu faktor n, maka ΔH juga
+                                harus berubah dengan faktor yang sama.</li>
+                            <li>Ketika menuliskan persamaan termokimia, kita harus selalu menuliskan wujud fisis semua
+                                reaktan dan produk karena ini akan membantu penentuan perubahan entalpi yang sesungguhnya.
                             </li>
                         </ul>
-                        <p>Ketika menuliskan persamaan termokimia, kita harus selalu menuliskan wujud fisis semua reaktan
-                            dan produk karena ini akan membantu penentuan perubahan entalpi yang sesungguhnya.</p>
-                        <h3 class="font-semibold mt-4">Contoh:</h3>
-                        <p>Reaksi pembakaran isooktana (bensin) menghasilkan energi sebesar 5450 kJ/mol serta gas karbon
-                            dioksida dan uap air. Tuliskan persamaan termokimianya.</p>
-                        <p class="bg-gray-100 p-4 rounded-md">Jawaban: C₈H₁₈(l) + O₂(g) → 9H₂O(g) + 8CO₂(g) ΔH = -5450
+
+                        <h3 class="font-semibold mt-6">Contoh:</h3>
+                        <p>Bensin adalah zat cair yang diperoleh dari hasil pemurnian minyak bumi yang dapat digunakan
+                            sebagai bahan bakar motor. Hal ini karena bensin berfungsi sebagai sumber energi agar motor
+                            dapat bergerak. Pada reaksi pembakaran isooktana (bensin) dihasilkan energi sebesar 5450 kJ/mol
+                            serta gas karbon dioksida dan uap air. Tuliskan persamaan termokimia untuk reaksi pembakaran
+                            bensin.</p>
+
+                        <p class="font-semibold mt-4">Jawaban:</p>
+                        <p>Oleh karena reaksi melepaskan energi maka entalpi reaksi dituliskan negatif seperti persamaan
+                            berikut:</p>
+                        <p class="text-center font-semibold mt-2">C₈H₁₈(l) + 25/2 O₂(g) → 9H₂O(g) + 8CO₂(g)  ΔH = –5450
                             kJ/mol</p>
                     </article>
                 </section>
 
+
                 <!-- Jenis-jenis Perubahan Entalpi -->
                 <section id="jenis-perubahan-entalpi" class="mb-12">
                     <header class="mb-6 text-center">
-                        <h2 class="text-3xl font-semibold">Kegiatan Belajar 2</h2>
+                        <h2 class="text-3xl font-semibold text-center text-yellow-600">✨ Kegiatan Belajar II</h2>
                         <h2 class="text-2xl font-semibold">Jenis-jenis Perubahan Entalpi</h2>
                     </header>
                     <article class="prose lg:prose-lg max-w-none">
@@ -236,7 +315,7 @@
                             entalpi sublimasi. Sedangkan entalpi perubahan kimia terdiri dari entalpi pembentukan standar,
                             entalpi atomisasi standar, entalpi pembakaran standar, entalpi netralisasi standar, dan entalpi
                             pelarutan standar.</p>
-                        <!-- Entalpi Perubahan Fisika -->
+                        {{-- <!-- Entalpi Perubahan Fisika -->
                         <section id="materi5" class="mb-12">
                             <header class="mb-6">
                                 <h2 class="text-2xl font-semibold text-gray-800">Entalpi Perubahan Fisika</h2>
@@ -290,8 +369,8 @@
                                     </table>
                                 </div>
                             </article>
-                        </section>
-                        <!-- Entalpi Penguapan -->
+                        </section> --}}
+                        {{-- <!-- Entalpi Penguapan -->
                         <section id="penguapan" class="mb-12">
                             <header class="mb-6">
                                 <h2 class="text-lg font-semibold text-gray-800">b. Entalpi Penguapan (ΔH<sub>vap</sub>)
@@ -395,7 +474,7 @@
                                     </table>
                                 </div>
                             </article>
-                        </section>
+                        </section> --}}
 
                         <h3 class="font-semibold mt-4">Entalpi Perubahan Kimia:</h3>
                         <p>Data entalpi perubahan kimia biasanya diberikan dalam keadaan standar. Entalpi standar perubahan

@@ -853,11 +853,13 @@
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
                             <figure class="text-center">
-                                <img src="{{asset('assets/images/materi/kaloriser.png')}}" alt="Kalorimeter Sederhana" class="rounded-lg shadow">
+                                <img src="{{ asset('assets/images/materi/kaloriser.png') }}" alt="Kalorimeter Sederhana"
+                                    class="rounded-lg shadow">
                                 <figcaption class="italic mt-2 text-sm">Gambar 6. Kalorimeter Sederhana</figcaption>
                             </figure>
                             <figure class="text-center">
-                                <img src="{{asset('assets/images/materi/kaloribom.png')}}" alt="Kalorimeter Bomb" class="rounded-lg shadow">
+                                <img src="{{ asset('assets/images/materi/kaloribom.png') }}" alt="Kalorimeter Bomb"
+                                    class="rounded-lg shadow">
                                 <figcaption class="italic mt-2 text-sm">Gambar 7. Kalorimeter Bomb</figcaption>
                             </figure>
                         </div>
@@ -1004,7 +1006,8 @@
                         <p class="text-center font-semibold">ΔH reaksi = ΔH₁ + ΔH₂ + ...</p>
 
                         <div class="text-center">
-                            <img src="{{asset('assets/images/materi/disik.png')}}" alt="Diagram Siklus" class="mx-auto my-4 rounded-md shadow">
+                            <img src="{{ asset('assets/images/materi/disik.png') }}" alt="Diagram Siklus"
+                                class="mx-auto my-4 rounded-md shadow">
                             <figcaption class="italic text-sm">Diagram Siklus</figcaption>
                         </div>
 
@@ -1095,9 +1098,9 @@
                         <p><strong>Perhatikan</strong> reaksi pembentukan gas HCl sebagai berikut:</p>
 
                         <div class="flex flex-col md:flex-row items-center justify-center gap-4 my-6">
-                            <img src="{{asset('assets/images/materi/ikhaseb.png')}}" alt="Ikatan H dan Cl sebelum"
+                            <img src="{{ asset('assets/images/materi/ikhaseb.png') }}" alt="Ikatan H dan Cl sebelum"
                                 class="rounded-md shadow-md w-full md:w-1/2">
-                            <img src="{{asset('assets/images/materi/ikhases.png')}}" alt="Ikatan HCl setelah"
+                            <img src="{{ asset('assets/images/materi/ikhases.png') }}" alt="Ikatan HCl setelah"
                                 class="rounded-md shadow-md w-full md:w-1/2">
                         </div>
                         <figcaption class="italic text-sm text-center">Gambar 8. Pemutusan ikatan H₂ dan Cl₂ untuk
@@ -1237,7 +1240,8 @@
                             <p>ΔH reaksi pada reaksi: C₂H₄(g) + H₂(g) → C₂H₆(g)</p>
 
                             <p><strong>Jawab:</strong></p>
-                            <img src="{{asset('assets/images/materi/pemik.png')}}" alt="Struktur Ikatan" class="rounded-md shadow-md my-4">
+                            <img src="{{ asset('assets/images/materi/pemik.png') }}" alt="Struktur Ikatan"
+                                class="rounded-md shadow-md my-4">
 
                             <p>ΔH reaksi = Σ energi pemutusan ikatan – Σ energi pembentukan ikatan</p>
                             <p>= {4 (C – H) + (C = C) + (H – H)} – {6 (C – H) + (C – C)}</p>
@@ -1255,27 +1259,36 @@
         </div>
     </div>
     <script>
-        // Function to handle smooth scrolling to the selected section
         function scrollToSection(event) {
             event.preventDefault();
             const targetId = event.target.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
+            const section = document.getElementById(targetId);
 
-            // Calculate the offset to bring the title in the center of the viewport
-            const yOffset = -window.innerHeight / 2 + targetElement.offsetHeight / 2;
-            const yPosition = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            if (!section) return;
+
+            // cari elemen heading (h2 atau h3) pertama di dalam section
+            const heading = section.querySelector("h2, h3, h4, h5") || section;
+
+            const rect = heading.getBoundingClientRect();
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const elementTop = rect.top + scrollTop;
+
+            const centerOffset = (window.innerHeight / 2) - (heading.offsetHeight / 2);
 
             window.scrollTo({
-                top: yPosition,
+                top: elementTop - centerOffset,
                 behavior: 'smooth'
             });
         }
 
-        // Attach click event listener to each link in the sidebar
-        document.querySelectorAll('aside nav a').forEach(link => {
-            link.addEventListener('click', scrollToSection);
+        // tambahkan event listener ke semua link sidebar
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll("aside nav a").forEach((link) => {
+                link.addEventListener("click", scrollToSection);
+            });
         });
     </script>
+
 
     <!-- Modal for Automatic Tutorial with Carousel -->
     {{-- <div class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50">

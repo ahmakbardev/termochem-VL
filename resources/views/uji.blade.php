@@ -1,9 +1,19 @@
 @extends('layouts.layout')
 
 @section('content')
-    <div class="mx-auto px-4 flex gap-5 pb-8 pt-24">
+    <div class="mx-auto px-4 flex gap-5 pb-8 pt-24 relative">
+        <div class="flex gap-5 absolute top-24 left-5 w-60 h-60">
+            <img src="{{ asset('assets/icons/left-1.png') }}" class="w-fit object-contain max-w-28 z-[2] h-fit" alt="">
+            <img src="{{ asset('assets/icons/left-2.png') }}" class="w-fit object-contain max-w-28 z-[2] h-fit" alt="">
+        </div>
+        <div class="flex gap-5 absolute top-24 right-5 w-80 h-60">
+            <img src="{{ asset('assets/icons/right-1.png') }}" class="w-fit object-contain max-w-44 z-[2] h-fit"
+                alt="">
+            <img src="{{ asset('assets/icons/right-2.png') }}" class="w-fit object-contain max-w-28 z-[2] h-fit"
+                alt="">
+        </div>
         <!-- Sticky Aside -->
-        <aside class="w-1/3 pl-4 h-fit sticky top-24 mt-16">
+        <aside class="w-1/3 pl-4 h-fit sticky top-24 mt-40">
             <div class="bg-white shadow-md rounded-lg p-4">
                 <h3 class="text-xl font-bold mb-4">Navigasi Soal</h3>
                 <ul class="list-none gap-4 grid grid-cols-4">
@@ -29,7 +39,7 @@
         </aside>
 
 
-        <div class="">
+        <div class="mt-24">
             <h2 class="text-3xl font-bold text-center mb-6">Soal Pre-test dan Post-test</h2>
 
             <!-- Pre-test and Post-test Section -->

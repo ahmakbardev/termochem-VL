@@ -1,27 +1,38 @@
 @extends('layouts.layout')
 
 @section('content')
-    <div class="container mx-auto px-4 py-12 flex flex-col h-full justify-center items-center min-h-screen">
-        <!-- Title -->
-        <h2 class="text-center text-4xl font-extrabold mb-12 drop-shadow-lg">Menu Percobaan</h2>
+    <div class="relative w-screen">
+        <div class="flex gap-5 absolute top-24 left-5 w-60 h-60">
+            <img src="{{ asset('assets/icons/left-1.png') }}" class="w-fit object-contain max-w-28 z-[2] h-fit" alt="">
+            <img src="{{ asset('assets/icons/left-2.png') }}" class="w-fit object-contain max-w-28 z-[2] h-fit" alt="">
+        </div>
+        <div class="flex gap-5 absolute top-24 right-5 w-80 h-60">
+            <img src="{{ asset('assets/icons/right-1.png') }}" class="w-fit object-contain max-w-44 z-[2] h-fit"
+                alt="">
+            <img src="{{ asset('assets/icons/right-2.png') }}" class="w-fit object-contain max-w-28 z-[2] h-fit"
+                alt="">
+        </div>
+        <div class="container mx-auto px-4 py-12 flex flex-col h-full justify-center items-center min-h-screen">
+            <!-- Title -->
+            <h2 class="text-center text-4xl font-extrabold mb-12 drop-shadow-lg">Menu Percobaan</h2>
 
-        <!-- Experiment Menu -->
-        <div class="flex flex-wrap justify-center gap-8">
-            <!-- Eksoterm Section -->
-            <div
-                class="bg-white p-8 rounded-lg shadow-lg transform transition hover:scale-105 hover:shadow-2xl w-full sm:w-64 text-center relative">
-                <h3 class="text-lg font-semibold mb-4 text-yellow-600">PERCOBAAN 1</h3>
-                <p class="text-gray-600 mb-4">REAKSI EKSOTERM & ENDOTERM
-                    HCl, NaOH, H2O dan NaHCO3
-                </p>
-                <a href="{{ route('percobaan-eksoterm') }}"
-                    class="w-full inline-block bg-yellow-500 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-yellow-600 transition duration-200 relative tooltip-trigger">
-                    Mulai Percobaan
-                </a>
-                <!-- Tooltip for Eksoterm -->
-            </div>
+            <!-- Experiment Menu -->
+            <div class="flex flex-wrap justify-center gap-8">
+                <!-- Eksoterm Section -->
+                <div
+                    class="bg-white p-8 rounded-lg shadow-lg transform transition hover:scale-105 hover:shadow-2xl w-full sm:w-64 text-center relative">
+                    <h3 class="text-lg font-semibold mb-4 text-yellow-600">PERCOBAAN 1</h3>
+                    <p class="text-gray-600 mb-4">REAKSI EKSOTERM & ENDOTERM
+                        HCl, NaOH, H2O dan NaHCO3
+                    </p>
+                    <a href="{{ route('percobaan-eksoterm') }}"
+                        class="w-full inline-block bg-yellow-500 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-yellow-600 transition duration-200 relative tooltip-trigger">
+                        Mulai Percobaan
+                    </a>
+                    <!-- Tooltip for Eksoterm -->
+                </div>
 
-            {{-- <!-- Endoterm Section -->
+                {{-- <!-- Endoterm Section -->
             <div
                 class="bg-white p-8 rounded-lg shadow-lg transform transition hover:scale-105 hover:shadow-2xl w-full sm:w-64 text-center relative">
                 <h3 class="text-lg font-semibold mb-4 text-teal-600">Reaksi Endoterm</h3>
@@ -36,20 +47,21 @@
                 <!-- Tooltip for Endoterm -->
             </div> --}}
 
-            <!-- Kalorimeter Section -->
-            <div
-                class="bg-white p-8 rounded-lg shadow-lg transform transition hover:scale-105 hover:shadow-2xl w-full sm:w-64 text-center relative">
-                <h3 class="text-lg font-semibold mb-4 text-indigo-600">PERCOBAAN 2</h3>
-                <p class="text-gray-600 mb-4">KALORIMETER
-                    HCl dan HaOH
-                </p>
-                <a href="{{ route('percobaan-kalorimeter') }}"
-                    class="w-full inline-block bg-indigo-500 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-indigo-600 transition duration-200 relative tooltip-trigger">
-                    Mulai Percobaan
-                </a>
-                <!-- Tooltip for Kalorimeter -->
-            </div>
+                <!-- Kalorimeter Section -->
+                <div
+                    class="bg-white p-8 rounded-lg shadow-lg transform transition hover:scale-105 hover:shadow-2xl w-full sm:w-64 text-center relative">
+                    <h3 class="text-lg font-semibold mb-4 text-indigo-600">PERCOBAAN 2</h3>
+                    <p class="text-gray-600 mb-4">KALORIMETER
+                        HCl dan HaOH
+                    </p>
+                    <a href="{{ route('percobaan-kalorimeter') }}"
+                        class="w-full inline-block bg-indigo-500 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-indigo-600 transition duration-200 relative tooltip-trigger">
+                        Mulai Percobaan
+                    </a>
+                    <!-- Tooltip for Kalorimeter -->
+                </div>
 
+            </div>
         </div>
     </div>
 

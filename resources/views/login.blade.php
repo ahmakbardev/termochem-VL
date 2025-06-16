@@ -2,14 +2,16 @@
 
 @section('content')
     <div class="flex items-center justify-center min-h-screen bg-gray-100">
-        <div class="flex gap-5 absolute top-5 left-5 w-60 h-60">
-            <img src="{{ asset('assets/icons/left-1.png') }}" class="w-fit object-contain max-w-28 z-[2] h-fit" alt="">
-            <img src="{{ asset('assets/icons/left-2.png') }}" class="w-fit object-contain max-w-28 z-[2] h-fit" alt="">
-        </div>
-        <div class="flex gap-5 absolute top-5 right-5 w-80 h-60">
-            <img src="{{ asset('assets/icons/right-1.png') }}" class="w-fit object-contain max-w-44 z-[2] h-fit"
+        <div class="flex gap-5 absolute top-5 left-5 w-16 h-16">
+            <img src="{{ asset('assets/icons/left-1.png') }}" class="w-full object-contain max-w-28 z-[2] h-full"
                 alt="">
-            <img src="{{ asset('assets/icons/right-2.png') }}" class="w-fit object-contain max-w-28 z-[2] h-fit"
+            <img src="{{ asset('assets/icons/left-2.png') }}" class="w-full object-contain max-w-28 z-[2] h-full"
+                alt="">
+        </div>
+        <div class="flex gap-5 absolute top-5 right-24 w-24 h-16">
+            <img src="{{ asset('assets/icons/right-1.png') }}" class="w-full object-contain max-w-28 z-[2] h-full"
+                alt="">
+            <img src="{{ asset('assets/icons/right-2.png') }}" class="w-full object-contain max-w-28 z-[2] h-full"
                 alt="">
         </div>
         <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">

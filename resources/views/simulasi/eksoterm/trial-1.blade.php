@@ -14,16 +14,16 @@
                     <div class="flex flex-col items-center space-y-4 p-4 rounded-md bg-white">
                         <!-- HCl -->
                         <img src="{{ asset('assets/images/simulasi/HCl.png') }}" alt="HCl"
-                            class="w-32 cursor-pointer hover:scale-110 transition" onclick="addSubstance('hcl')" />
+                            class="w-32 max-w-20 cursor-pointer hover:scale-110 transition" onclick="addSubstance('hcl')" />
                         <!-- NaOH -->
                         <img src="{{ asset('assets/images/simulasi/NaOH.png') }}" alt="NaOH"
-                            class="w-32 cursor-pointer hover:scale-110 transition" onclick="addSubstance('naoh')" />
+                            class="w-32 max-w-20 cursor-pointer hover:scale-110 transition" onclick="addSubstance('naoh')" />
                         <!-- NaHCO3 -->
                         <img src="{{ asset('assets/images/simulasi/nahco3.webp') }}" alt="NaHCO3"
-                            class="w-32 cursor-pointer hover:scale-110 transition" onclick="addSubstance('nahco3')" />
+                            class="w-32 max-w-20 cursor-pointer hover:scale-110 transition" onclick="addSubstance('nahco3')" />
                         <!-- H2O -->
                         <img src="{{ asset('assets/images/simulasi/h2o.webp') }}" alt="H2O"
-                            class="w-32 cursor-pointer hover:scale-110 transition" onclick="addSubstance('h2o')" />
+                            class="w-32 max-w-20 cursor-pointer hover:scale-110 transition" onclick="addSubstance('h2o')" />
                     </div>
             </div>
 

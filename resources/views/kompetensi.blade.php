@@ -3,22 +3,24 @@
 @section('content')
     <!-- Header -->
     <header id="header" class="header h-full text-center lg:text-left">
-        <div class="flex gap-5 absolute top-24 left-5 w-60 h-60">
-            <img src="{{ asset('assets/icons/left-1.png') }}" class="w-fit object-contain max-w-28 z-[2] h-fit" alt="">
-            <img src="{{ asset('assets/icons/left-2.png') }}" class="w-fit object-contain max-w-28 z-[2] h-fit" alt="">
-        </div>
-        <div class="flex gap-5 absolute top-24 right-5 w-80 h-60">
-            <img src="{{ asset('assets/icons/right-1.png') }}" class="w-fit object-contain max-w-44 z-[2] h-fit"
+        <div class="flex gap-5 absolute top-20 left-5 w-16 h-16">
+            <img src="{{ asset('assets/icons/left-1.png') }}" class="w-full object-contain max-w-28 z-[2] h-full"
                 alt="">
-            <img src="{{ asset('assets/icons/right-2.png') }}" class="w-fit object-contain max-w-28 z-[2] h-fit"
+            <img src="{{ asset('assets/icons/left-2.png') }}" class="w-full object-contain max-w-28 z-[2] h-full"
+                alt="">
+        </div>
+        <div class="flex gap-5 absolute top-20 right-24 w-24 h-16">
+            <img src="{{ asset('assets/icons/right-1.png') }}" class="w-full object-contain max-w-28 z-[2] h-full"
+                alt="">
+            <img src="{{ asset('assets/icons/right-2.png') }}" class="w-full object-contain max-w-28 z-[2] h-full"
                 alt="">
         </div>
         <div class="container h-full px-4 items-center justify-center flex flex-col">
             <div class="relative w-2/3 h-fit">
-                <img src="{{ asset('assets/images/detail/kompetensi/kompetensi.png') }}" alt="">
+                <img src="{{ asset('assets/images/detail/kompetensi/kompetensi.png') }}" class="w-full max-w-[680px] object-contain" alt="">
                 <a href="javascript:void(0)" onclick="openModal('modalUmum')">
                     <img src="{{ asset('assets/images/detail/kompetensi/umum.png') }}"
-                        class="absolute top-20 w-2/3 -left-64 hover:-rotate-12 hover:scale-105 transition-all ease-in-out"
+                        class="absolute top-44 w-2/3 -left-64 hover:-rotate-12 hover:scale-105 transition-all ease-in-out"
                         alt="Umum">
                 </a>
                 <a href="javascript:void(0)" onclick="openModal('modalKimia')">
@@ -28,7 +30,7 @@
                 </a>
                 <a href="javascript:void(0)" onclick="openModal('modalKeterampilan')">
                     <img src="{{ asset('assets/images/detail/kompetensi/keterampilan.png') }}"
-                        class="absolute top-20 w-2/3 -right-64 hover:rotate-12 hover:scale-105 transition-all ease-in-out"
+                        class="absolute top-44 w-2/3 -right-64 hover:rotate-12 hover:scale-105 transition-all ease-in-out"
                         alt="Keterampilan">
                 </a>
                 <a href="javascript:void(0)" onclick="openModal('modalAtp')">

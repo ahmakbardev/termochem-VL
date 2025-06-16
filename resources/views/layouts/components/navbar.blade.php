@@ -9,9 +9,9 @@
                 <h1 class="text-2xl font-semibold">Thermochem-VL</h1>
             </a>
             <!-- Back Button -->
-            <button id="backButton" onclick="goBack()" class="text-xl font-semibold w-fit text-blue-500 hover:underline">
+            {{-- <button id="backButton" onclick="goBack()" class="text-xl font-semibold w-fit text-blue-500 hover:underline">
                 Kembali
-            </button>
+            </button> --}}
         </div>
 
         <button

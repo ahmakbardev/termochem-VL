@@ -2,14 +2,16 @@
 
 @section('content')
     <div class="relative w-screen">
-        <div class="flex gap-5 absolute top-0 left-5 w-60 h-60">
-            <img src="{{ asset('assets/icons/left-1.png') }}" class="w-fit object-contain max-w-28 z-[2] h-fit" alt="">
-            <img src="{{ asset('assets/icons/left-2.png') }}" class="w-fit object-contain max-w-28 z-[2] h-fit" alt="">
-        </div>
-        <div class="flex gap-5 absolute top-0x right-[3.25rem] w-[235px] h-60">
-            <img src="{{ asset('assets/icons/right-1.png') }}" class="w-fit object-contain max-w-36 z-[2] h-fit"
+        <div class="flex gap-5 absolute -top-10 left-5 w-16 h-16">
+            <img src="{{ asset('assets/icons/left-1.png') }}" class="w-full object-contain max-w-28 z-[2] h-full"
                 alt="">
-            <img src="{{ asset('assets/icons/right-2.png') }}" class="w-fit object-contain max-w-24 z-[2] h-fit"
+            <img src="{{ asset('assets/icons/left-2.png') }}" class="w-full object-contain max-w-28 z-[2] h-full"
+                alt="">
+        </div>
+        <div class="flex gap-5 absolute -top-10 right-24 w-24 h-16">
+            <img src="{{ asset('assets/icons/right-1.png') }}" class="w-full object-contain max-w-28 z-[2] h-full"
+                alt="">
+            <img src="{{ asset('assets/icons/right-2.png') }}" class="w-full object-contain max-w-28 z-[2] h-full"
                 alt="">
         </div>
         <div class="container mx-auto px-4 py-8 mt-28">
